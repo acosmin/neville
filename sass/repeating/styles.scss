@@ -1,0 +1,64 @@
+////////////
+// Styles //
+////////////
+
+/*! ### Font Styles */
+%small-italic {
+	font-style: italic;
+	@include rem_font_size($fs-14);
+	a &, a:hover & {
+		@extend %semilight-font;
+	}
+}
+
+%medium-normal {
+	@include rem_font_size($fs-14);
+	font-weight: $fw-medium;
+}
+
+%excerpt-style {
+	font-weight: $fw-regular;
+	line-height: 1.9;
+	word-spacing: 0.02em
+}
+
+.small-upper-heading {
+	padding-top: 0;
+	@include rem_font_size($fs-15);
+	text-transform: uppercase;
+	font-weight: $fw-semibold;
+	@extend %ff-secondary;
+}
+
+.rss-btn, .sb-general {
+	@extend %ff-secondary;
+	@include ff-smallest-uppercase;
+
+	i {
+		@extend %accent-font;
+		display: inline-block;
+		margin-bottom: 2px !important;
+	}
+}
+
+.rss-btn {
+	.entry-meta-secondary & {
+		float: right;
+	}
+}
+
+.sidebtn {
+	padding: rem(5) rem(15);
+	display: inline-block;
+	border-width: rem(3);
+	border-style: solid;
+	@extend %blank-border;
+	box-shadow: 0 rem(5) rem(10) rgba(0,0,0,0.05);
+	border-radius: rem(30);
+	// transition: all .2s linear;
+
+	&:hover {
+		@extend %blank-bg;
+		box-shadow: 0 rem(5) rem(5) rgba(0,0,0,0.08);
+	}
+}

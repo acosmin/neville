@@ -1,0 +1,100 @@
+/////////////////
+// Blog Header //
+/////////////////
+
+/*! ### Blog Header */
+/*! --------------- */
+.blog-header {
+	@extend %semidark-bg;
+	text-shadow: 0 2px 3px rgba(0,0,0,.5);
+
+	&, .trail-browse {
+		@extend %light-font;
+	}
+
+	.bh-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 1;
+		@extend %darkest-bg;
+		opacity: .25;
+	}
+
+	.bho-shadow {
+		content: "";
+		position: absolute;
+		height: 2px;
+		width: 100%;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: auto;
+		@extend %darkest-bg;
+		opacity: .4;
+		z-index: 4;
+	}
+
+	.col-12x {
+		$cl12pad: rem( $margin-big - 15 );
+		padding-top: $cl12pad;
+		padding-bottom: $cl12pad;
+		z-index: 2;
+	}
+
+	.black-wrap {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		top: auto;
+		height: rem($margin-small);
+		@extend %darkest-bg;
+		opacity: .3;
+	}
+
+	.section-title {
+		font-size: rem($fs-60);
+		text-align: center;
+	}
+
+	.section-title, a, a:hover, a:visited {
+		@extend %blank-font;
+	}
+
+	.section-description {
+		float: none;
+		width: 100%;
+		margin: 0 auto;
+		text-align: center;
+	}
+
+	.header-bread {
+		$hbpad: rem( ($margin-small / 2) );
+		position: absolute;
+		top: auto;
+		left: $hbpad;
+		right: $hbpad;
+		height: rem($margin-small);
+		text-align: center;
+		bottom: rem(-$margin-small);
+		z-index: 3;
+		padding-top: 3px;
+	}
+
+	@include mq(max900) {
+		.col-12x {
+			margin-bottom: rem(5) !important;
+		}
+
+		.header-bread, .black-wrap {
+			display: none;
+		}
+
+		.section-title {
+			@include rem_font_size($fs-36);
+		}
+	}
+}

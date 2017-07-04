@@ -1,0 +1,27 @@
+////////////
+// Tables //
+////////////
+table {
+	border-collapse: collapse;
+	margin: 0 0 1.5em;
+	width: 100%;
+}
+thead th {
+	border-bottom-width: $bw-2;
+	border-bottom-style: solid;
+	@extend %light-border-bottom;
+	@extend %dark-font;
+	padding-bottom: 0.5em;
+}
+th {
+	padding: 0.4em 0;
+	text-align: left;
+}
+tr {
+	border-bottom-width: $bw-1;
+	border-bottom-style: solid;
+	@extend %light-border-bottom;
+}
+td {
+	padding: 0.4em;
+}

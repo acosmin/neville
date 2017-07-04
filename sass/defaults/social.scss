@@ -1,0 +1,103 @@
+////////////
+// Social //
+////////////
+
+$social-list: (
+	facebook    : ( color: #3b5998, url: 'facebook.com', icon: '\f09b' ),
+	twitter     : ( color: #55acee, url: 'twitter.com', icon: '\f09a' ),
+	google-plus : ( color: #dd4b39, url: 'plus.google.com', icon: '\f0d5' ),
+	linkedin    : ( color: #007bb5, url: 'linkedin.com', icon: '\f0e1' ),
+	youtube     : ( color: #cc0000, url: 'youtube.com', icon: '\f16a' ),
+	instagram   : ( color: #e95950, url: 'instagram.com', icon: '\f16d' ),
+	whatsapp    : ( color: #4dc247, url: 'whatsapp.com', icon: '\f232' ),
+	pinterest   : ( color: #cb2027, url: 'pinterest.com', icon: '\f231' ),
+	snapchat    : ( color: #fffc00, url: 'snapchat.com', icon: '\f2ac' ),
+	flickr      : ( color: #ff0084, url: 'flickr.com', icon: '\f16e' ),
+	tumblr      : ( color: #32506d, url: 'tumblr.com', icon: '\f173' ),
+	vk          : ( color: #45668e, url: 'vk.com', icon: '\f189' ),
+	vimeo       : ( color: #aad450, url: 'vimeo.com', icon: '\f27d' ),
+	foursquare  : ( color: #0072b1, url: 'foursquare.com', icon: '\f180' ),
+	spotify     : ( color: #00e461, url: 'spotify.com', icon: '\f1bc' ),
+	github      : ( color: #000000, url: 'github.com', icon: '' ),
+	behance     : ( color: #1769ff, url: 'behance.net', icon: '\f1b4' ),
+	rss         : ( color: #ff6600, url: 'rss', icon: '\f09e' ),
+	reddit      : ( color: #ff6600, url: 'reddit.com', icon: '\f1a1' ),
+);
+
+@each $social-site, $social-args in $social-list {
+	$social-color : map-get( $social-args, color );
+	$social-url   : map-get( $social-args, url );
+	$social-icon  : map-get( $social-args, icon );
+
+	%social-bg-#{$social-site} {
+		background-color: $social-color;
+	}
+	%social-icon-#{$social-site} {
+		content: "#{$social-icon}";
+	}
+}
+
+.social-menu-round a {
+	@each $social-site, $social-args in $social-list {
+		$social-color : map-get( $social-args, color );
+		$social-url   : map-get( $social-args, url );
+		$social-icon  : map-get( $social-args, icon );
+
+		&[href*="#{$social-url}"] {
+			@extend %social-bg-#{$social-site};
+
+			&:before {
+				@extend %social-icon-#{$social-site};
+			}
+		}
+	}
+}
+
+.social-nav-header a {
+	@each $social-site, $social-args in $social-list {
+		$social-color : map-get( $social-args, color );
+		$social-url   : map-get( $social-args, url );
+		$social-icon  : map-get( $social-args, icon );
+
+		&[href*="#{$social-url}"]:before {
+			@extend %social-icon-#{$social-site};
+		}
+	}
+}
+
+.social-menu-round {
+	list-style: none;
+	display: inline-block;
+	margin-bottom: 0;
+
+	.footer-navs & {
+		float: right;
+	}
+
+	li {
+		float: left;
+
+		a {
+			$ss-btn-size: rem(40);
+			$ss-btn-marg: rem(3);
+			text-align: center;
+			float: left;
+			font-size: 0;
+			margin: 0 0 $ss-btn-marg $ss-btn-marg;
+			text-align: center;
+			width: $ss-btn-size;
+			height: $ss-btn-size;
+			border-radius: $ss-btn-size;
+
+			&:before {
+				line-height: $ss-btn-size;
+				@include rem_font_size(16);
+				@extend %social-icon-font;
+			}
+
+			&, &:hover, &:visited, &:focus, &:active {
+				@extend %blank-font;
+			}
+		}
+	}
+}

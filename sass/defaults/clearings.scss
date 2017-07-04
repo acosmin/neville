@@ -1,0 +1,13 @@
+///////////////
+// Clearings //
+///////////////
+%clearfix {
+    &:before, &:after {
+        content: "";
+    	display: table;
+    	table-layout: fixed;
+    }
+    &:after {
+    	clear: both;
+    }
+}

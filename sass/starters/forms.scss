@@ -1,0 +1,144 @@
+///////////
+// Forms //
+///////////
+button, input, select, textarea {
+	max-width: 100%;
+}
+
+label {
+	@extend %ff-secondary;
+	@extend %dark-font;
+	display: block;
+	font-weight: $fw-medium;
+	@include rem_font_size($fs-13);
+	margin-bottom: 0.5em;
+}
+
+fieldset {
+	margin-bottom: 1em;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea {
+	border-width: $bw-2;
+	border-style: solid;
+	@extend %light-border;
+	@include radius(4);
+	display: block;
+	padding: 0.7em;
+	width: 100%;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="range"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="week"]:focus,
+input[type="time"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="color"]:focus,
+textarea:focus {
+	@extend %semilight-border;
+}
+
+select {
+	border-width: $bw-2;
+	border-style: solid;
+	@extend %light-border;
+	@include radius(4);
+	height: 3em;
+}
+
+select:focus {
+	@extend %semilight-border;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+	margin-right: 0.5em;
+}
+
+input[type="radio"] + label,
+input[type="checkbox"] + label {
+	font-weight: $fw-medium;
+}
+
+button,
+input[type="button"],
+input[type="submit"] {
+	@extend %darkest-bg;
+	border: 0;
+	@include radius(4);
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	@extend %blank-font;
+	@extend %ff-headings;
+	cursor: pointer;
+	display: inline-block;
+	@include rem_font_size($fs-15);
+	font-weight: $fw-medium;
+	line-height: 1;
+	padding: 1em 2em;
+	text-shadow: none;
+	text-transform: uppercase;
+	-webkit-transition: background 0.2s;
+	transition: background 0.2s;
+}
+
+input + button,
+input + input[type="button"],
+input + input[type="submit"] {
+	padding: 0.75em 2em;
+}
+
+button.secondary,
+input[type="reset"],
+input[type="button"].secondary,
+input[type="reset"].secondary,
+input[type="submit"].secondary {
+	background-color: #ddd;
+	color: #222;
+}
+
+button:hover,
+button:focus,
+input[type="button"]:hover,
+input[type="button"]:focus,
+input[type="submit"]:hover,
+input[type="submit"]:focus {
+	background: #767676;
+}
+
+button.secondary:hover,
+button.secondary:focus,
+input[type="reset"]:hover,
+input[type="reset"]:focus,
+input[type="button"].secondary:hover,
+input[type="button"].secondary:focus,
+input[type="reset"].secondary:hover,
+input[type="reset"].secondary:focus,
+input[type="submit"].secondary:hover,
+input[type="submit"].secondary:focus {
+	background: #bbb;
+}

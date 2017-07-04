@@ -1,0 +1,237 @@
+///////////
+// Icons //
+///////////
+
+@font-face {
+  font-family: 'neville-icons';
+  src:
+    url('assets/icons/neville-icons.ttf?atlw4l') format('truetype'),
+    url('assets/icons/neville-icons.woff?atlw4l') format('woff'),
+    url('assets/icons/neville-icons.svg?atlw4l#neville-icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.nicon, %social-icon-font {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'neville-icons' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: middle;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.nicon-twitter-square:before {
+  content: "\f081";
+}
+.nicon-facebook-square:before {
+  content: "\f082";
+}
+.nicon-linkedin-square:before {
+  content: "\f08c";
+}
+.nicon-phone-square:before {
+  content: "\f098";
+}
+.nicon-pinterest-square:before {
+  content: "\f0d3";
+}
+.nicon-google-plus-square:before {
+  content: "\f0d4";
+}
+.nicon-reddit-square:before {
+  content: "\f1a2";
+}
+.nicon-snapchat-square:before {
+  content: "\f2ad";
+}
+.nicon-home-c:before {
+  content: "\e900";
+}
+.nicon-quote-c:before {
+  content: "\e901";
+}
+.nicon-search2:before {
+  content: "\e902";
+}
+.nicon-envelope:before {
+  content: "\e903";
+}
+.nicon-bubble:before {
+  content: "\e904";
+}
+.nicon-user:before {
+  content: "\e905";
+}
+.nicon-folder:before {
+  content: "\e906";
+}
+.nicon-cog:before {
+  content: "\e907";
+}
+.nicon-tag:before {
+  content: "\e908";
+}
+.nicon-cart:before {
+  content: "\e909";
+}
+.nicon-eye:before {
+  content: "\e90a";
+}
+.nicon-search:before {
+  content: "\f002";
+}
+.nicon-heart:before {
+  content: "\f004";
+}
+.nicon-shopping-cart:before {
+  content: "\f07a";
+}
+.nicon-heart-o:before {
+  content: "\f08a";
+}
+.nicon-phone-square2:before {
+  content: "\f099";
+}
+.nicon-twitter:before {
+  content: "\f09a";
+}
+.nicon-facebook:before {
+  content: "\f09b";
+}
+.nicon-feed:before {
+  content: "\f09e";
+}
+.nicon-pinterest:before {
+  content: "\f0d2";
+}
+.nicon-google-plus:before {
+  content: "\f0d5";
+}
+.nicon-linkedin:before {
+  content: "\f0e1";
+}
+.nicon-angle-left:before {
+  content: "\f104";
+}
+.nicon-angle-right:before {
+  content: "\f105";
+}
+.nicon-angle-up:before {
+  content: "\f106";
+}
+.nicon-angle-down:before {
+  content: "\f107";
+}
+.nicon-youtube:before {
+  content: "\f167";
+}
+.nicon-xing:before {
+  content: "\f168";
+}
+.nicon-youtube-play:before {
+  content: "\f16a";
+}
+.nicon-stack-overflow:before {
+  content: "\f16c";
+}
+.nicon-instagram:before {
+  content: "\f16d";
+}
+.nicon-flickr:before {
+  content: "\f16e";
+}
+.nicon-tumblr:before {
+  content: "\f173";
+}
+.nicon-skype:before {
+  content: "\f17e";
+}
+.nicon-foursquare:before {
+  content: "\f180";
+}
+.nicon-trello:before {
+  content: "\f181";
+}
+.nicon-vk:before {
+  content: "\f189";
+}
+.nicon-weibo:before {
+  content: "\f18a";
+}
+.nicon-slack:before {
+  content: "\f198";
+}
+.nicon-google:before {
+  content: "\f1a0";
+}
+.nicon-reddit:before {
+  content: "\f1a1";
+}
+.nicon-stumbleupon:before {
+  content: "\f1a4";
+}
+.nicon-digg:before {
+  content: "\f1a6";
+}
+.nicon-behance:before {
+  content: "\f1b4";
+}
+.nicon-steam:before {
+  content: "\f1b6";
+}
+.nicon-spotify:before {
+  content: "\f1bc";
+}
+.nicon-soundcloud:before {
+  content: "\f1be";
+}
+.nicon-codepen:before {
+  content: "\f1cb";
+}
+.nicon-git:before {
+  content: "\f1d3";
+}
+.nicon-paper-plane:before {
+  content: "\f1d8";
+}
+.nicon-share-alt:before {
+  content: "\f1e0";
+}
+.nicon-twitch:before {
+  content: "\f1e8";
+}
+.nicon-yelp:before {
+  content: "\f1e9";
+}
+.nicon-lastfm:before {
+  content: "\f202";
+}
+.nicon-pinterest-p:before {
+  content: "\f231";
+}
+.nicon-whatsapp:before {
+  content: "\f232";
+}
+.nicon-medium:before {
+  content: "\f23a";
+}
+.nicon-vimeo:before {
+  content: "\f27d";
+}
+.nicon-shopping-bag:before {
+  content: "\f290";
+}
+.nicon-shopping-basket:before {
+  content: "\f291";
+}
+.nicon-snapchat-ghost:before {
+  content: "\f2ac";
+}

@@ -1,0 +1,375 @@
+////////////
+// Mixins //
+////////////
+
+// Font size
+@mixin rem_font_size( $px ) {
+	font-size: #{$px}px;
+	font-size: rem($px);
+}
+
+// No margin or padding
+@mixin no-mp {
+	margin: 0;
+	padding: 0;
+}
+
+// Links style
+@mixin link-style( $px ) {
+	a:not([class]) {
+		border-bottom-width: #{$px};
+		border-bottom-style: solid;
+		text-decoration: none !important;
+
+		@include mq(maxsmall) {
+			border-bottom-width: $bw-1;
+		}
+
+		@extend %accent-border-bottom;
+
+		&:hover, &:focus {
+			text-decoration: none !important;
+			@extend %darkest-border-bottom;
+		}
+	}
+
+	a[style] {
+		text-decoration: none !important;
+		border-bottom: none;
+	}
+}
+
+// Media queries
+@mixin mq( $media ) {
+	@if $media == max400 {
+		@media only screen and (max-width: em($bp-400)) { @content; }
+	}
+	@else if $media == max480 {
+		@media only screen and (max-width: em($bp-480)) { @content; }
+	}
+	@else if $media == min480 {
+		@media only screen and (min-width: em($bp-480)) { @content; }
+	}
+	@else if $media == maxsmall {
+		@media only screen and (max-width: em($bp-small)) { @content; }
+	}
+	// @else if $media == medium-screens {
+	// 	@media only screen and (min-width: $break-small + 1) and (max-width: $break-large - 1) { @content; }
+	// }
+	@else if $media == max700 {
+		@media only screen and (max-width: em($bp-700)) { @content; }
+	}
+	@else if $media == max900 {
+		@media only screen and (max-width: em($bp-900)) { @content; }
+	}
+	@else if $media == min900 {
+		@media only screen and (min-width: em($bp-900)) { @content; }
+	}
+	@else if $media == max1024 {
+		@media only screen and (max-width: em($bp-medium)) { @content; }
+	}
+	@else if $media == maxlarge {
+		@media only screen and (max-width: em($bp-large)) { @content; }
+	}
+}
+
+// Transform
+@mixin transform($transforms, $br: 'all' ) {
+	@if( $br == 'all' ) {
+		-webkit-transform: $transforms;
+		-moz-transform:    $transforms;
+		-ms-transform:     $transforms;
+		-o-transform:      $transforms;
+		transform:         $transforms;
+	} @else {
+		@each $prefix in $br {
+			-#{$prefix}-transform: $transforms;
+		}
+		transform: $transforms;
+	}
+}
+
+// Position absolute, width/height max;
+@mixin absolute-max( $z-index: 0 ) {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: $z-index;
+}
+
+// Show ellipsis if text is above certain width
+@mixin show-ellipsis {
+	overflow: hidden;
+	word-wrap: break-word;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+// Border radius
+@mixin radius($radius: $br-def, $ems: false) {
+	$radius: if( $ems, rem($radius), #{$radius}px);
+	border-radius: $radius;
+}
+
+// Prefixes
+@mixin prefix($declarations, $prefixes: ()) {
+	@each $property, $value in $declarations {
+		@each $prefix in $prefixes {
+			#{'-' + $prefix + '-' + $property}: $value;
+    	}
+    #{$property}: $value;
+	}
+}
+
+// Max width
+@mixin mw( $width ) {
+	-ms-flex-preferred-size: $width;
+	flex-basis: $width;
+	max-width: $width;
+}
+
+// Grids
+@mixin flex_create_grids( $types: () ) {
+	.row-display {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-flex: 0;
+		-ms-flex: 0 1 auto;
+		flex: 0 1 auto;
+		-webkit-box-orient: horizontal;
+		-webkit-box-direction: normal;
+		-ms-flex-direction: row;
+		flex-direction: row;
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+
+		& > div, & > header {
+			position: relative;
+			@extend %clearfix;
+			-webkit-box-flex: 0;
+			-ms-flex: 0 0 auto;
+			flex: 0 0 auto;
+		}
+
+		@at-root .col-center {
+			-webkit-box-pack: center;
+		    -ms-flex-pack: center;
+		    justify-content: center;
+		    text-align: center;
+		}
+		@at-root .col-middle {
+			-webkit-box-align: center;
+		    -ms-flex-align: center;
+		    align-items: center;
+		}
+
+		@each $type in $types {
+			$g-class: unquote(map-get($type, name));
+			$g-margins: map-get($type, margin);
+
+			&.#{$g-class} {
+				@each $g-margin in $g-margins {
+					$g-margin-sides: unquote(map-get($g-margins, sides));
+					$g-margin-bottom: unquote(map-get($g-margins, bottom));
+					$g-index: index($g-margins, $g-margin);
+					@if($g-index == 1) {
+						margin-left: -$g-margin-sides;
+						margin-right: -$g-margin-sides;
+
+						& > div, & > header {
+							padding-right: $g-margin-sides;
+							padding-left: $g-margin-sides;
+							margin-bottom: $g-margin-bottom;
+						}
+
+					}
+				}
+			}
+		}
+
+		$col-sizes: (
+			( name: 'col-full', value: 100% ),
+			( name: 'col-1x', value: 8.33333333% ),
+			( name: 'col-2x', value: 16.66666667% ),
+			( name: 'col-3x', value: 25% ),
+			( name: 'col-4x', value: 33.33333333% ),
+			( name: 'col-5x', value: 41.66666667% ),
+			( name: 'col-6x', value: 50% ),
+			( name: 'col-7x', value: 58.33333333% ),
+			( name: 'col-8x', value: 66.66666667% ),
+			( name: 'col-9x', value: 75% ),
+			( name: 'col-10x', value: 83.33333333% ),
+			( name: 'col-11x', value: 91.66666667% ),
+			( name: 'col-12x', value: 100% ),
+		);
+
+		@each $col-size in $col-sizes {
+			$col-name: map-get($col-size, name);
+			$col-value: map-get($col-size, value);
+			@if( $col-name != 'col-full') {
+				& .#{$col-name} {
+					@include mw($col-value);
+				}
+			} @else {
+				& .#{$col-name} {
+					-webkit-box-flex: 1;
+				    -ms-flex-positive: 1;
+				    flex-grow: 1;
+				    -ms-flex-preferred-size: 0;
+				    flex-basis: 0;
+				    max-width: $col-value;
+				}
+			}
+		}
+
+	}
+}
+
+@mixin create-grid( $width, $gutter, $qty, $max ) {
+	$no-gutters: ( $gutter * $max ) - $gutter;
+	$min-width: ( $width - $no-gutters ) / $max;
+
+	& {
+        float: left;
+        margin-right: if( $gutter == 0, 0, grid_percent( $width, $gutter ) );
+		@content;
+        @extend %clearfix;
+	}
+
+	@for $item from 1 through $qty {
+		&.col-#{$item}x {
+			@if( $item == 1 ) {
+				width: percentage( $min-width * 100 / $width ) / 100;
+			} @else {
+				width: percentage( ( ( ( $min-width + $gutter ) * $item ) - $gutter ) * 100 / $width ) / 100;
+			}
+        }
+	}
+}
+
+@mixin fix-last-col( $last ) {
+	& .grid-col:nth-child(#{$last}n) {
+	    margin-right: 0;
+	}
+	& .grid-col:nth-child(#{$last}n+1) {
+	    clear: both;
+	}
+}
+
+// Attach a state to an element
+@mixin element_state( $name, $elements, $states ) {
+	@content;
+	@each $type, $input in $elements {
+		@if( str-slice($type, 1, 2) != 's_' ) {
+			@each $state in $states {
+				#{$input}[type="#{$type}"]#{$state} {
+					@if( $state != null ) {
+						$new-state: str-replace($state, ':', '');
+						@extend %#{$name}-types-#{$new-state};
+					} @else {
+						@extend %#{$name}-types;
+					}
+				}
+			}
+		} @else {
+			@each $state in $states {
+				$new-input: str-replace($type, 's_', '');
+				#{$new-input}#{$state} {
+					@if( $state != null ) {
+						$new-state: str-replace($state, ':', '');
+						@extend %#{$name}-types-#{$new-state};
+					} @else {
+						@extend %#{$name}-types;
+					}
+				}
+			}
+		}
+	}
+}
+
+// Ghost colors
+@mixin generate_ghost_colors( $colors, $positions: $border-positions-def ) {
+	@each $title, $color in $colors {
+
+		%#{$title}-bg {
+			background-color: $color; /*! ## #{$title}: background color */
+		}
+
+		%#{$title}-font {
+			color: $color; /*! ## #{$title}: font color */
+		}
+
+		@each $position in $positions {
+			@if( $position == null ){
+				%#{$title}-border {
+					border-color: $color; /*! ## #{$title}: border color */
+				}
+			} @else {
+				%#{$title}-border-#{$position} {
+					border-#{$position}-color: $color; /*! ## #{$title}: border #{$position} color */
+				}
+			}
+		}
+	}
+}
+
+// Font sizes divided by
+@mixin fs-divided($max, $by, $class ) {
+	@for $index from 1 through $max {
+		$smaller_by: if($index == 2, $by, $by * ($index - 1));
+
+		@if( $index == 1 ) {
+			#{$class}#{$index} {
+				@include rem_font_size($fs-largest);
+				@content;
+			};
+		} @else {
+			#{$class}#{$index} {
+				@include rem_font_size($fs-largest - $smaller_by);
+				@content;
+			};
+		}
+	}
+}
+
+// Fonts mixins
+@mixin ff-smallest-uppercase {
+	@include rem_font_size($fs-11);
+	text-transform: uppercase;
+	font-weight: $fw-semibold;
+	letter-spacing: 0.05em;
+}
+@mixin ff-logo-text {
+	line-height: 1;
+	@extend %ff-headings;
+	@include rem_font_size(40);
+	font-weight: $fw-black;
+}
+@mixin ff-headings {
+	@extend %ff-secondary;
+	@extend %medium-normal;
+	text-transform: uppercase;
+	letter-spacing: $ls-small;
+}
+
+// Links
+@mixin link-bb {
+	line-height: rem($lh-meta-sty2);
+	border-bottom-width: $bw-2;
+	border-bottom-style: solid;
+	@extend %accent-border-bottom;
+
+	&:hover {
+		@extend %darkest-border-bottom;
+	}
+}
+
+// Borders mixins
+@mixin b-1px-bottom-light {
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	@extend %light-border-bottom;
+}

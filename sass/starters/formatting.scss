@@ -1,0 +1,9 @@
+////////////////
+// Formatting //
+////////////////
+hr {
+	@extend %light-bg;
+	border: 0;
+	height: 2px;
+	margin-bottom: 1.5em;
+}

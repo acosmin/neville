@@ -1,0 +1,46 @@
+////////////////////////
+// Section: Instagram //
+////////////////////////
+
+/*! ### Instagram Section */
+/*! --------------------- */
+.ex-instagram-feed.ex-no-styles {
+
+	.ex-if-title-wrap {
+		background-color: rgba(255,255,255,.9);
+		position: absolute;
+		z-index: 3;
+		display: inline-block;
+		top: 50%;
+		left: 50%;
+		@include transform( translate(-50%, -50%), ( 'ms', 'webkit' ) );
+		padding: 2rem;
+		box-shadow: 0 0 4rem rgba(0,0,0,.5);
+
+		.section-title {
+			width: 100%;
+			text-align: center;
+
+			&:before {
+				display: none;
+			}
+		}
+
+		@include mq(max480) {
+			padding: 1rem;
+
+			.section-title {
+				@include rem_font-size($fs-22);
+			}
+		};
+	}
+}
+
+.ex-if-item {
+	@include mq(maxsmall) {
+		@include mw(25% !important);
+	};
+	@include mq(max480) {
+		@include mw(33% !important);
+	};
+}

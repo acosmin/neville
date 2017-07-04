@@ -1,0 +1,204 @@
+/*
+Theme Name: Neville
+Theme URI: http://www.acosmin.com/theme/neville/
+Author: Acosmin
+Author URI: http://www.acosmin.com
+Description: Neville is a very clean and purposeful WordPress theme that has been designed with a unique outlook. It can be used for sophisticated online newspapers or magazines, attention grabbing blogs or your daily simple journal. You can have fun creating a ravishing home page by using 5 custom made sections: Slider, Blog, Category, Ad banner and Instagram feed (more to come). Installing Jetpack and activating the Sharing module will enable some nice article sharing options, like fixed/sticky buttons next to the article. Neville also includes a custom title design module, allowing you to use italic and bold characters. Some of these features are available for free after installing/activating Neville Extensions plugin https://wordpress.org/plugins/neville-extensions/. You can view a full demo here: http://demo.acosmin.com/themes/neville/
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: neville
+Tags: grid-layout, two-columns, right-sidebar, translation-ready, custom-background, custom-header, custom-logo, footer-widgets, featured-images, theme-options, custom-menu, threaded-comments, blog, news, entertainment
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+Neville is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Normalize
+# Repeating
+# Accessibility
+# Alignments
+# Clearings
+# Animations
+# Icons
+# Social
+# Typography
+	## Body
+	## Headings
+	## Secondary
+	## Coding
+	## Styles
+# Breadcrumbs
+# Forms
+# Media
+# Formatting
+# Lists
+# Tables
+# Links
+# 3rd Party Styles
+	## Owl Carousel
+# Structure
+	## Global
+		### Grids
+		### Repeating Modules
+	## Headers
+		### Master Header
+	## Footers
+		### Footer Sidebars
+		### Master Footer
+	## Sections
+		### Headers
+		### Masonry
+		### Category Section
+		### Blog Section
+		### Instagram Section
+		### Break Line Section
+		### Advertising
+		### Slider
+	## Posts
+		### Index
+			#### Navigation
+		### Single
+			#### About the author
+			#### Post navigation
+			#### Related posts
+			#### Comments
+	## Pages
+	## Sidebars
+		### Default Sidebar
+			#### Sticky Sidebars
+			#### Default Widget Template
+--------------------------------------------------------------*/
+
+// Includes
+@import "sass/includes/variables.scss";
+@import "sass/includes/functions.scss";
+@import "sass/includes/mixins.scss";
+
+/*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
+@import "sass/defaults/normalize.scss";
+
+/*--------------------------------------------------------------
+# Repeating
+--------------------------------------------------------------*/
+@import "sass/repeating/colors.scss";
+@import "sass/repeating/styles.scss";
+
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+@import "sass/defaults/accessibility.scss";
+
+/*--------------------------------------------------------------
+# Alignments
+--------------------------------------------------------------*/
+@import "sass/defaults/alignments.scss";
+
+/*--------------------------------------------------------------
+# Clearings
+--------------------------------------------------------------*/
+@import "sass/defaults/clearings.scss";
+
+/*--------------------------------------------------------------
+# Animations
+--------------------------------------------------------------*/
+@import "sass/defaults/animations.scss";
+
+/*--------------------------------------------------------------
+# Icons
+--------------------------------------------------------------*/
+@import "sass/defaults/icons.scss";
+
+/*--------------------------------------------------------------
+# Social
+--------------------------------------------------------------*/
+@import "sass/defaults/social.scss";
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+@import "sass/starters/typography.scss";
+
+/*--------------------------------------------------------------
+# Breadcrumbs
+--------------------------------------------------------------*/
+@import "sass/starters/breadcrumbs.scss";
+
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
+@import "sass/starters/forms.scss";
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+@import "sass/starters/media.scss";
+
+/*--------------------------------------------------------------
+# Formatting
+--------------------------------------------------------------*/
+@import "sass/starters/formatting.scss";
+
+/*--------------------------------------------------------------
+# Lists
+--------------------------------------------------------------*/
+@import "sass/starters/lists.scss";
+
+/*--------------------------------------------------------------
+# Tables
+--------------------------------------------------------------*/
+@import "sass/starters/tables.scss";
+
+/*--------------------------------------------------------------
+# Links
+--------------------------------------------------------------*/
+@import "sass/starters/links.scss";
+
+/*--------------------------------------------------------------
+# 3rd Party Styles
+--------------------------------------------------------------*/
+@import "sass/includes/3rd-party.scss";
+
+/*--------------------------------------------------------------
+# Structure
+--------------------------------------------------------------*/
+/*! ## Global */
+@import "sass/structure/global.scss";
+
+/*! ## Headers */
+@import "sass/structure/headers/header.scss";
+@import "sass/structure/headers/blog-header.scss";
+@import "sass/structure/headers/overlays.scss";
+
+/*! ## Footers */
+@import "sass/structure/footers/footer.scss";
+
+/*! ## Sections */
+@import "sass/structure/sections/sections.scss";
+@import "sass/structure/sections/category.scss";
+@import "sass/structure/sections/blog.scss";
+@import "sass/structure/sections/instagram.scss";
+@import "sass/structure/sections/break-line.scss";
+@import "sass/structure/sections/advertising.scss";
+@import "sass/structure/sections/slider.scss";
+
+/*! ## Posts */
+@import "sass/structure/posts/index.scss";
+@import "sass/structure/posts/single.scss";
+
+/*! ## Pages */
+@import "sass/structure/page/page.scss";
+
+/*! ## Sidebars */
+@import "sass/structure/sidebars/sidebar.scss";

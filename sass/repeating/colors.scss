@@ -1,0 +1,19 @@
+////////////
+// Colors //
+////////////
+
+// Colors array
+$colors-array: (
+	blank: $color-white,
+	darkest: $color-black,
+	accent: $color-accent,
+	dark: $color-dark,
+	semidark: $color-semidark,
+	mediumdark: $color-mediumdark,
+	semilight: $color-semilight,
+	light: $color-light,
+	bright: $color-bright,
+);
+
+// Generate ghost colors for $colors-array
+@include generate_ghost_colors( $colors-array );

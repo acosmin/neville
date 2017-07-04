@@ -1,0 +1,972 @@
+# Copyright (C) 2017 Acosmin
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: neville 1.0.6\n"
+"Report-Msgid-Bugs-To: http://www.acosmin.com/contact/\n"
+"POT-Creation-Date: 2017-06-22 21:43:07+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2017-06-22 21:43:07+00:00\n"
+"Last-Translator: Acosmin <support@acosmin.com>\n"
+"Language-Team: Acosmin <support@acosmin.com>\n"
+
+#: 404.php:12
+msgid "Oops! That page can&rsquo;t be found."
+msgstr ""
+
+#: 404.php:13
+#, php-format
+msgid "Maybe you want to visit our %s instead."
+msgstr ""
+
+#: 404.php:13
+msgid "home page"
+msgstr ""
+
+#: comments.php:38
+msgctxt "comments title"
+msgid "One comment"
+msgstr ""
+
+#: comments.php:43
+#, php-format
+msgctxt "comments title"
+msgid "%s Comment"
+msgid_plural "%s Comments"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:61 comments.php:83
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:64 comments.php:86
+msgid "Older Comments"
+msgstr ""
+
+#: comments.php:65 comments.php:87
+msgid "Newer Comments"
+msgstr ""
+
+#: comments.php:100
+msgid "Comments are closed."
+msgstr ""
+
+#: inc/back-compat.php:28 inc/back-compat.php:38 inc/back-compat.php:51
+#, php-format
+msgid ""
+"Neville requires at least PHP version 5.4.0. You are running version %s. "
+"Please upgrade and try again."
+msgstr ""
+
+#: inc/helper-functions.php:334
+#, php-format
+msgctxt "copyright info: 1. Year; 2. Title"
+msgid "Copyright &copy; %1$s %2$s. All rights reserved"
+msgstr ""
+
+#: inc/helper-functions.php:338
+msgid "Y"
+msgstr ""
+
+#: inc/theme-setup.php:58
+msgid "Primary"
+msgstr ""
+
+#: inc/theme-setup.php:59
+msgid "Header Top"
+msgstr ""
+
+#: inc/theme-setup.php:60
+msgid "Header Top Social"
+msgstr ""
+
+#: inc/theme-setup.php:61 inc/customizer/customizer.php:136
+msgid "Footer"
+msgstr ""
+
+#: inc/theme-setup.php:62
+msgid "Footer Social"
+msgstr ""
+
+#: inc/customizer/customizer-helpers.php:132
+msgctxt "Customizer sortable options"
+msgid "About the author"
+msgstr ""
+
+#: inc/customizer/customizer-helpers.php:139
+msgctxt "Customizer sortable options"
+msgid "Next &amp; prev article"
+msgstr ""
+
+#: inc/customizer/customizer-helpers.php:146
+msgctxt "Customizer sortable options"
+msgid "Related posts"
+msgstr ""
+
+#: inc/customizer/customizer-helpers.php:154
+msgctxt "Customizer sortable options"
+msgid "Comments"
+msgstr ""
+
+#: inc/customizer/customizer.php:36
+msgid "Front Page Sections"
+msgstr ""
+
+#: inc/customizer/customizer.php:45
+msgid "This will only work in Boxed mode"
+msgstr ""
+
+#: inc/customizer/customizer.php:56
+msgid "Accent Color"
+msgstr ""
+
+#: inc/customizer/customizer.php:66
+msgid "Theme Settings"
+msgstr ""
+
+#: inc/customizer/customizer.php:67
+msgid "Edit theme specific options, related to posts, pages, headers &hellip;"
+msgstr ""
+
+#: inc/customizer/customizer.php:85
+msgid "General"
+msgstr ""
+
+#: inc/customizer/customizer.php:98
+msgid "Boxed version"
+msgstr ""
+
+#: inc/customizer/customizer.php:99
+msgid ""
+"Display the container as full width or with a maximum width. With boxed "
+"version you will be able to view the background image."
+msgstr ""
+
+#: inc/customizer/customizer.php:107
+msgid "Header"
+msgstr ""
+
+#: inc/customizer/customizer.php:114
+#: template-parts/partials/headers/header-tmpl-default.php:219
+msgid "navigation"
+msgstr ""
+
+#: inc/customizer/customizer.php:120
+msgid "Mobile menu label"
+msgstr ""
+
+#: inc/customizer/customizer.php:149
+msgid "Copyright info"
+msgstr ""
+
+#: inc/customizer/customizer.php:150
+msgid ""
+"Change your websites copyright information. You can use most of the HTML "
+"tags."
+msgstr ""
+
+#: inc/customizer/customizer.php:172
+msgid "Hide \"Back To Top\" button"
+msgstr ""
+
+#: inc/customizer/customizer.php:180
+msgid "Index"
+msgstr ""
+
+#: inc/customizer/customizer.php:192
+msgid "Home Page Header"
+msgstr ""
+
+#: inc/customizer/customizer.php:193
+msgid "It will display only on the home page, above your latest posts."
+msgstr ""
+
+#: inc/customizer/customizer.php:212
+msgid "Show home page header"
+msgstr ""
+
+#: inc/customizer/customizer.php:227
+msgid "Show subscribe button"
+msgstr ""
+
+#: inc/customizer/customizer.php:236
+#: template-parts/partials/__index_archive.php:238
+msgid "Latest Articles"
+msgstr ""
+
+#: inc/customizer/customizer.php:242
+msgid "Home Page posts title"
+msgstr ""
+
+#: inc/customizer/customizer.php:264
+msgid "Posts Loop Layout"
+msgstr ""
+
+#: inc/customizer/customizer.php:283
+msgid "Layout starts with:"
+msgstr ""
+
+#: inc/customizer/customizer.php:284
+msgid "Should the posts loop start with a small or big thumbnail layout?"
+msgstr ""
+
+#: inc/customizer/customizer.php:289
+msgid "Large thumbnail"
+msgstr ""
+
+#: inc/customizer/customizer.php:290
+msgid "Small thumbnail"
+msgstr ""
+
+#: inc/customizer/customizer.php:303
+msgid "Show a large thumbnail post each # of posts"
+msgstr ""
+
+#: inc/customizer/customizer.php:304
+msgid "If you make this 1, it will only display large thumbnails"
+msgstr ""
+
+#: inc/customizer/customizer.php:323
+msgid "Show mixed post thumbnails?"
+msgstr ""
+
+#: inc/customizer/customizer.php:324
+msgid "If you disable this, it will only display small thumbnail posts"
+msgstr ""
+
+#: inc/customizer/customizer.php:338
+msgid "Blog Section"
+msgstr ""
+
+#: inc/customizer/customizer.php:339
+msgid ""
+"The following options change the View More Articles button in Blog section"
+msgstr ""
+
+#: inc/customizer/customizer.php:357
+msgid "Show button"
+msgstr ""
+
+#: inc/customizer/customizer.php:366
+#: template-parts/partials/__index_archive.php:422
+msgid "View more articles"
+msgstr ""
+
+#: inc/customizer/customizer.php:372
+msgid "Button title"
+msgstr ""
+
+#: inc/customizer/customizer.php:388
+msgid "Button url"
+msgstr ""
+
+#: inc/customizer/customizer.php:397
+msgid "Post"
+msgstr ""
+
+#: inc/customizer/customizer.php:410 inc/customizer/customizer.php:530
+msgid "Hide sidebar"
+msgstr ""
+
+#: inc/customizer/customizer.php:411
+msgid "This will hide the sidebar globally in all posts (not pages)"
+msgstr ""
+
+#: inc/customizer/customizer.php:425 inc/customizer/customizer.php:545
+msgid "Jetpack side sharing"
+msgstr ""
+
+#: inc/customizer/customizer.php:426
+msgid ""
+"Sharing icons on the right side of the post. To be able to see these buttons "
+"you need to activate <strong>Jetpack</strong> and enable the <strong>Sharing "
+"module</strong>. Also, the selected button style must be <strong>Icons only</"
+"strong> in <code>WP Administration Panel > Settings > Sharing</code>"
+msgstr ""
+
+#: inc/customizer/customizer.php:444 inc/customizer/customizer.php:564
+msgid "Show side sharing buttons"
+msgstr ""
+
+#: inc/customizer/customizer.php:459 inc/customizer/customizer.php:579
+msgid "Sitcky side share buttons?"
+msgstr ""
+
+#: inc/customizer/customizer.php:473
+msgid "Single View"
+msgstr ""
+
+#: inc/customizer/customizer.php:474
+msgid "Additional sections. Enable and reorder them below."
+msgstr ""
+
+#: inc/customizer/customizer.php:517
+msgid "Page"
+msgstr ""
+
+#: inc/customizer/customizer.php:531
+msgid "This will hide the sidebar globally in all pages (not posts)"
+msgstr ""
+
+#: inc/customizer/customizer.php:546
+msgid ""
+"Sharing icons on the right side of the page. To be able to see these buttons "
+"you need to activate <strong>Jetpack</strong> and enable the <strong>Sharing "
+"module</strong>. Also, the selected button style must be <strong>Icons only</"
+"strong> in <code>WP Administration Panel > Settings > Sharing</code>"
+msgstr ""
+
+#: inc/customizer/customizer.php:596 inc/customizer/customizer.php:618
+msgid "Notice:"
+msgstr ""
+
+#: inc/customizer/customizer.php:597
+msgid ""
+"This feature will be visible only if you use the Boxed option (Theme "
+"Settings > General). Also, depending on screen resolution, it may only show "
+"on Desktop computers"
+msgstr ""
+
+#: inc/customizer/customizer.php:619
+msgid ""
+"This feature will be visible only on archive type pages. If you want to add "
+"header images for categories, please consider installing the \"Categories "
+"Images\" plugin, available on WordPress.org"
+msgstr ""
+
+#: inc/customizer/customizer.php:640
+msgid "Light Logo"
+msgstr ""
+
+#: inc/customizer/customizer.php:641
+msgid ""
+"This should go well on a dark background color. It will be displayed in the "
+"footer"
+msgstr ""
+
+#: inc/customizer/customizer.php:723
+msgctxt "Customizer: Add a Widget button text"
+msgid "Add a Section"
+msgstr ""
+
+#: inc/enqueue/enqueue-frontend.php:51
+msgctxt "Search overlay - close button text"
+msgid "X"
+msgstr ""
+
+#: inc/enqueue/enqueue-frontend.php:52
+msgctxt "Search overlay - placeholder"
+msgid "Type your search keywords here&hellip;"
+msgstr ""
+
+#: inc/entry/meta.php:10
+msgid "Tags: "
+msgstr ""
+
+#: inc/entry/meta.php:12
+msgctxt "single tags seperator"
+msgid " "
+msgstr ""
+
+#: inc/entry/meta.php:36
+msgid "Categories: "
+msgstr ""
+
+#: inc/entry/meta.php:38
+msgctxt "single categories seperator"
+msgid " "
+msgstr ""
+
+#: inc/entry/meta.php:137
+msgid "Sticky"
+msgstr ""
+
+#: inc/entry/meta.php:258
+msgctxt "excerpt ending dots"
+msgid "&hellip;"
+msgstr ""
+
+#: inc/metaboxes/post-options.php:20
+msgid "Post Options:"
+msgstr ""
+
+#: inc/metaboxes/post-options.php:66
+msgid "Featured article"
+msgstr ""
+
+#: inc/metaboxes/post-options.php:66
+msgid "This is used for sliders, featured areas."
+msgstr ""
+
+#: inc/metaboxes/post-options.php:72
+msgid "Add drop cap"
+msgstr ""
+
+#: inc/metaboxes/post-options.php:72
+msgid ""
+"On the first paragraph. The first character needs to be a letter. Shows up "
+"only on the frontend."
+msgstr ""
+
+#: inc/modules/breadcrumbs/breadcrumbs.php:255
+msgid "Browse:"
+msgstr ""
+
+#: inc/modules/breadcrumbs/breadcrumbs.php:256
+msgctxt "breadcrumbs aria label"
+msgid "Breadcrumbs"
+msgstr ""
+
+#: inc/modules/breadcrumbs/breadcrumbs.php:257
+msgid "Home"
+msgstr ""
+
+#: inc/modules/breadcrumbs/breadcrumbs.php:258
+msgid "404 Not Found"
+msgstr ""
+
+#: inc/modules/breadcrumbs/breadcrumbs.php:259
+msgid "Archives"
+msgstr ""
+
+#: inc/modules/breadcrumbs/breadcrumbs.php:261
+#, php-format
+msgid "Search results for &#8220;%s&#8221;"
+msgstr ""
+
+#: inc/modules/breadcrumbs/breadcrumbs.php:263
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: inc/modules/breadcrumbs/breadcrumbs.php:265
+#, php-format
+msgid "Minute %s"
+msgstr ""
+
+#: inc/modules/breadcrumbs/breadcrumbs.php:267
+#, php-format
+msgid "Week %s"
+msgstr ""
+
+#: inc/modules/breadcrumbs/breadcrumbs.php:719
+msgctxt "minute and hour archives time format"
+msgid "g:i a"
+msgstr ""
+
+#: inc/modules/breadcrumbs/breadcrumbs.php:736
+msgctxt "minute archives time format"
+msgid "i"
+msgstr ""
+
+#: inc/modules/breadcrumbs/breadcrumbs.php:753
+msgctxt "hour archives time format"
+msgid "g a"
+msgstr ""
+
+#: inc/modules/breadcrumbs/breadcrumbs.php:769
+#: inc/modules/breadcrumbs/breadcrumbs.php:798
+#: inc/modules/breadcrumbs/breadcrumbs.php:825
+#: inc/modules/breadcrumbs/breadcrumbs.php:852
+#: inc/modules/breadcrumbs/breadcrumbs.php:1192
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr ""
+
+#: inc/modules/breadcrumbs/breadcrumbs.php:770
+#: inc/modules/breadcrumbs/breadcrumbs.php:826
+#: inc/modules/breadcrumbs/breadcrumbs.php:1196
+msgctxt "monthly archives date format"
+msgid "F"
+msgstr ""
+
+#: inc/modules/breadcrumbs/breadcrumbs.php:771
+#: inc/modules/breadcrumbs/breadcrumbs.php:1200
+msgctxt "daily archives date format"
+msgid "j"
+msgstr ""
+
+#: inc/modules/breadcrumbs/breadcrumbs.php:799
+msgctxt "weekly archives date format"
+msgid "W"
+msgstr ""
+
+#: inc/sidebars/sidebars.php:13
+msgid "Mobile Menu"
+msgstr ""
+
+#: inc/sidebars/sidebars.php:15
+msgid "Displays widgets in the offset mobile menu."
+msgstr ""
+
+#: inc/sidebars/sidebars.php:23
+msgid "Home Sidebar"
+msgstr ""
+
+#: inc/sidebars/sidebars.php:25
+msgid "Displays widgets in home/archives view."
+msgstr ""
+
+#: inc/sidebars/sidebars.php:33
+msgid "Posts Sidebar"
+msgstr ""
+
+#: inc/sidebars/sidebars.php:35
+msgid "Displays widgets in single view."
+msgstr ""
+
+#: inc/sidebars/sidebars.php:43
+msgid "Pages Sidebar"
+msgstr ""
+
+#: inc/sidebars/sidebars.php:45
+msgid "Displays widgets in page view."
+msgstr ""
+
+#: inc/sidebars/sidebars.php:53
+msgid "Footer Sidebar #1"
+msgstr ""
+
+#: inc/sidebars/sidebars.php:55 inc/sidebars/sidebars.php:65
+#: inc/sidebars/sidebars.php:75
+msgid "Add widgets here."
+msgstr ""
+
+#: inc/sidebars/sidebars.php:63
+msgid "Footer Sidebar #2"
+msgstr ""
+
+#: inc/sidebars/sidebars.php:73
+msgid "Footer Sidebar #3"
+msgstr ""
+
+#: inc/widgets/base.php:264
+msgid "All categories"
+msgstr ""
+
+#: inc/widgets/base.php:306
+#, php-format
+msgid "<p>No menus have been created yet. <a href=\"%s\">Create some</a>.</p>"
+msgstr ""
+
+#: inc/widgets/base.php:311
+msgid "Select a menu"
+msgstr ""
+
+#: inc/widgets/posts/posts.php:29
+msgid "NEVILLE Posts"
+msgstr ""
+
+#: inc/widgets/posts/posts.php:35
+msgid "Will display your featured/popular posts."
+msgstr ""
+
+#: inc/widgets/posts/posts.php:53
+msgid "Featured"
+msgstr ""
+
+#: inc/widgets/posts/posts.php:154
+msgid "Title:"
+msgstr ""
+
+#: inc/widgets/posts/posts.php:161
+msgid "Display:"
+msgstr ""
+
+#: inc/widgets/posts/posts.php:166 sections/category/category.php:399
+msgctxt "display on side"
+msgid "Featured posts"
+msgstr ""
+
+#: inc/widgets/posts/posts.php:171 sections/category/category.php:404
+msgctxt "display on side"
+msgid "Popular posts"
+msgstr ""
+
+#: sections/blog/blog.php:29
+msgid "Blog"
+msgstr ""
+
+#: sections/blog/blog.php:35
+msgid "Adds a Blog section"
+msgstr ""
+
+#: sections/blog/blog.php:154
+msgid ""
+"This section is meant to be used only on the front page. Also, the `Front "
+"Page` page template must be active. To change the View More Articles button, "
+"go to Theme Settings > Index > Blog Section"
+msgstr ""
+
+#: sections/category/category-tmpl.php:331
+msgid "There are no posts in this category to display. Please add some!"
+msgstr ""
+
+#: sections/category/category-tmpl.php:879
+msgid "More Articles"
+msgstr ""
+
+#: sections/category/category-tmpl.php:890
+msgid "Subscribe"
+msgstr ""
+
+#: sections/category/category.php:29
+msgid "Category"
+msgstr ""
+
+#: sections/category/category.php:35
+msgid "Adds a Category section"
+msgstr ""
+
+#: sections/category/category.php:72
+msgid "Side Title"
+msgstr ""
+
+#: sections/category/category.php:239
+msgid "Options"
+msgstr ""
+
+#: sections/category/category.php:246
+msgid "Select a category: "
+msgstr ""
+
+#: sections/category/category.php:253
+msgid "How many posts? "
+msgstr ""
+
+#: sections/category/category.php:264
+msgid "Exclude child categories"
+msgstr ""
+
+#: sections/category/category.php:271
+msgid "Header area"
+msgstr ""
+
+#: sections/category/category.php:278
+msgid "Show section header"
+msgstr ""
+
+#: sections/category/category.php:285
+msgid "Link on category name"
+msgstr ""
+
+#: sections/category/category.php:292
+msgid "Menu on top right corner: "
+msgstr ""
+
+#: sections/category/category.php:299
+msgid "Articles options"
+msgstr ""
+
+#: sections/category/category.php:306
+msgid "Excerpt # words: "
+msgstr ""
+
+#: sections/category/category.php:317
+msgid "Show thumbnails"
+msgstr ""
+
+#: sections/category/category.php:324
+msgid "Exclude posts without thumbnails"
+msgstr ""
+
+#: sections/category/category.php:331
+msgid "Link on thumbnail"
+msgstr ""
+
+#: sections/category/category.php:338
+msgid "Show overlay on thumbnail"
+msgstr ""
+
+#: sections/category/category.php:345 sections/slider/slider.php:363
+msgid "Show post title"
+msgstr ""
+
+#: sections/category/category.php:352
+msgid "Show post excerpt"
+msgstr ""
+
+#: sections/category/category.php:359
+msgid "Show post meta"
+msgstr ""
+
+#: sections/category/category.php:366
+msgid "Show post comments #"
+msgstr ""
+
+#: sections/category/category.php:373
+msgid "Show post share"
+msgstr ""
+
+#: sections/category/category.php:380
+msgid "Show post date"
+msgstr ""
+
+#: sections/category/category.php:387
+msgid "Section sidebar"
+msgstr ""
+
+#: sections/category/category.php:394
+msgid "Display on side"
+msgstr ""
+
+#: sections/category/category.php:413
+msgid "Show side"
+msgstr ""
+
+#: sections/category/category.php:420
+msgid "Sticky side"
+msgstr ""
+
+#: sections/category/category.php:427
+msgid "Side posts title"
+msgstr ""
+
+#: sections/category/category.php:434
+msgid "Show side buttons"
+msgstr ""
+
+#: sections/line/line.php:29
+msgid "Line"
+msgstr ""
+
+#: sections/line/line.php:35
+msgid "Adds a break line, useful between sections"
+msgstr ""
+
+#: sections/line/line.php:166
+msgid "Make margin bottom smaller"
+msgstr ""
+
+#: sections/slider/slider-tmpl.php:185
+msgid ""
+"You need to add some featured posts before using this section. When you edit "
+"a post, click on <b>Featured article</b> in the <b>Post Options</b> metabox "
+"(somewhere in the top-right corner). To use only the slider you will need 2 "
+"featured articles. To use this section at full capacity, you need 12."
+msgstr ""
+
+#: sections/slider/slider.php:29
+msgid "Slider"
+msgstr ""
+
+#: sections/slider/slider.php:35
+msgid "Adds a Slider section"
+msgstr ""
+
+#: sections/slider/slider.php:219
+msgid "Show or hide parts"
+msgstr ""
+
+#: sections/slider/slider.php:226
+msgid "Show slider"
+msgstr ""
+
+#: sections/slider/slider.php:233
+msgid "Show statics"
+msgstr ""
+
+#: sections/slider/slider.php:240
+msgid "Slider options"
+msgstr ""
+
+#: sections/slider/slider.php:247
+msgid "How many slides?"
+msgstr ""
+
+#: sections/slider/slider.php:252
+msgctxt "slides - how many"
+msgid "2 slides"
+msgstr ""
+
+#: sections/slider/slider.php:257
+msgctxt "slides - how many"
+msgid "3 slides"
+msgstr ""
+
+#: sections/slider/slider.php:262
+msgctxt "slides - how many"
+msgid "4 slides"
+msgstr ""
+
+#: sections/slider/slider.php:271
+msgid "Autoplay slides"
+msgstr ""
+
+#: sections/slider/slider.php:278
+msgid "Autoplay - delay between slides"
+msgstr ""
+
+#: sections/slider/slider.php:283
+msgctxt "slides timeout - how many"
+msgid "2 seconds"
+msgstr ""
+
+#: sections/slider/slider.php:288
+msgctxt "slides timeout - how many"
+msgid "3 seconds"
+msgstr ""
+
+#: sections/slider/slider.php:293
+msgctxt "slides timeout - how many"
+msgid "4 seconds"
+msgstr ""
+
+#: sections/slider/slider.php:302
+msgid "Rewind slides"
+msgstr ""
+
+#: sections/slider/slider.php:309
+msgid "Show navigation arrows"
+msgstr ""
+
+#: sections/slider/slider.php:316
+msgid "Show navigation dots"
+msgstr ""
+
+#: sections/slider/slider.php:323
+msgid "Statics options"
+msgstr ""
+
+#: sections/slider/slider.php:330
+msgid "How many statics?"
+msgstr ""
+
+#: sections/slider/slider.php:335
+msgctxt "statics - how many"
+msgid "3 posts"
+msgstr ""
+
+#: sections/slider/slider.php:340
+msgctxt "statics - how many"
+msgid "6 posts"
+msgstr ""
+
+#: sections/slider/slider.php:349
+msgid "Add 3 more to offset"
+msgstr ""
+
+#: sections/slider/slider.php:356
+msgid "Works for both slides and statics"
+msgstr ""
+
+#: sections/slider/slider.php:370
+msgid "Show category"
+msgstr ""
+
+#: sections/slider/slider.php:377
+msgid "Show comments number"
+msgstr ""
+
+#: template-parts/content-none.php:12
+msgid "Nothing Found"
+msgstr ""
+
+#: template-parts/content-none.php:16
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: template-parts/content-none.php:20
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: template-parts/content-none.php:26
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: template-parts/partials/__global.php:37
+msgid "close menu"
+msgstr ""
+
+#: template-parts/partials/__index_archive.php:124
+#, php-format
+msgid "Searched for: %s"
+msgstr ""
+
+#: template-parts/partials/__index_archive.php:248
+#: template-parts/partials/__post_content.php:188
+msgid "RSS Subscribe"
+msgstr ""
+
+#: template-parts/partials/__index_archive.php:400
+msgid "Go to page: "
+msgstr ""
+
+#: template-parts/partials/__index_archive.php:431
+msgctxt "Posts pagination - previous text"
+msgid "&#8592;"
+msgstr ""
+
+#: template-parts/partials/__index_archive.php:432
+msgctxt "Posts pagination - next text"
+msgid "&#8594;"
+msgstr ""
+
+#: template-parts/partials/__page_content_page.php:270
+#: template-parts/partials/__post_content_single.php:305
+msgid "Pages:"
+msgstr ""
+
+#: template-parts/partials/__posts_content_index_big.php:287
+#, php-format
+msgid "Continue reading: %s"
+msgstr ""
+
+#: template-parts/partials/__posts_content_index_big.php:288
+msgid "Continue Reading &#8594;"
+msgstr ""
+
+#: template-parts/partials/__post_extensions.php:23
+msgctxt "author box, pre name"
+msgid "Author: "
+msgstr ""
+
+#: template-parts/partials/__post_extensions.php:105
+msgid "Related Posts"
+msgstr ""
+
+#: template-parts/partials/__post_extensions.php:209
+msgctxt "Placeholder for Next Post button"
+msgid "Placeholder"
+msgstr ""
+
+#: template-parts/partials/__post_extensions.php:211
+msgctxt "Post navigation adjacent"
+msgid "Next"
+msgstr ""
+
+#: template-parts/partials/__post_extensions.php:212
+msgctxt "Post navigation adjacent"
+msgid "Previous"
+msgstr ""
+
+#: template-parts/partials/__tmpl_front_page.php:33
+msgid "Add or Configure Sections"
+msgstr ""
+
+#: template-parts/partials/__tmpl_front_page.php:35
+msgid "Add as many sections as you want."
+msgstr ""
+
+#: template-parts/partials/footers/footer-tmpl-default.php:361
+#, php-format
+msgctxt "theme author credits line"
+msgid "%s by Acosmin"
+msgstr ""
+
+#: template-parts/partials/headers/header-tmpl-default.php:259
+msgid "my account"
+msgstr ""
+
+#: template-parts/partials/headers/header-tmpl-default.php:259
+msgid "log in or register"
+msgstr ""

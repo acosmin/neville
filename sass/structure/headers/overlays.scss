@@ -1,0 +1,148 @@
+//////////////
+// Overlays //
+//////////////
+$oswrapwidth: 400;
+$ospama: 40;
+$osbg: rgba(white, 0.7);
+
+/*! ### Overlays */
+/*! ------------ */
+.overlay-opened {
+	overflow: hidden;
+
+	.os-overlay {
+		visibility: visible;
+		background-color: $osbg;
+	}
+}
+
+.search-opened {
+	overflow: hidden;
+
+	.search-overlay {
+		visibility: visible;
+		background-color: $osbg;
+	}
+}
+
+.overlay-opened .os-overlay .os-wrap {
+	box-shadow: 0 0 rem($oswrapwidth / 2) rgba(0,0,0,.4);
+	@include transform( translateX(0), ( 'ms', 'webkit' ) );
+
+	@include mq(max400) {
+		width: 100%;
+	};
+}
+
+.os-overlay, .search-overlay {
+	visibility: hidden;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(255,255,255,0);
+	transition: background-color .1s linear;
+	z-index: 9999;
+}
+
+.search-overlay {
+	.search-form {
+		width: 100%;
+		max-width: rem(900);
+		position: absolute;
+		padding: rem($margin-big);
+		@extend %blank-bg;
+		box-shadow: 0 0 rem(200) rem(150) rgba(white, 1);
+		border-radius: rem(6);
+		top: 50%;
+		left: 50%;
+		@include transform( translate(-50%,-50%), ( 'ms', 'webkit' ) );
+
+		label {
+			float: left;
+			width: 70%;
+
+			.search-field {
+				line-height: rem($margin-big);
+				padding: 0 rem(11);
+			}
+		}
+
+		.search-submit, .search-close {
+			float: left;
+			padding: 0 !important;
+			line-height: rem($margin-big + 4);
+			margin-left: 1%;
+		}
+
+		.search-submit {
+			width: 20%;
+		}
+
+		.search-close {
+			width: 8%;
+		}
+
+		@include mq(maxsmall) {
+			label {
+				width: 60%;
+			}
+
+			.search-submit {
+				width: 25%;
+			}
+
+			.search-close {
+				width: 13%;
+			}
+		};
+
+		@include mq(max480) {
+			label {
+				width: 100%;
+			}
+
+			.search-submit {
+				width: 80%;
+				margin-left: 0;
+			}
+
+			.search-close {
+				width: 19%;
+			}
+		};
+	}
+}
+
+.os-overlay {
+
+	.os-empty {
+		height: 100%;
+		margin-left: rem($oswrapwidth);
+	}
+
+	.os-wrap {
+		position: absolute;
+		width: rem($oswrapwidth);
+		padding: rem($ospama);
+		height: 100%;
+		@include transform( translateX(-100%), ( 'ms', 'webkit' ) );
+		background-color: #fff;
+		box-shadow: none;
+		overflow-y: auto;
+		transition: transform .1s linear, box-shadow .2s linear;
+		transition-delay: .2s;
+
+		.os-close-wrap {
+			text-align: center;
+			margin-bottom: rem($ospama);
+
+			.os-close {
+				@extend %ff-headings;
+				@include rem_font_size($fs-22);
+				font-style: italic;
+				font-weight: $fw-regular;
+				display: inline-block;
+			}
+		}
+	}
+}

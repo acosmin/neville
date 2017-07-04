@@ -1,0 +1,100 @@
+///////////////
+// Variables //
+///////////////
+
+// Widths
+$max-width: 1170;
+
+// Colors
+$color-white: #fff;
+$color-black: #000;
+$color-accent: #ef0000;
+$color-dark: #1f1f1f;
+$color-semidark: #444;
+$color-mediumdark: #888;
+$color-semilight: #bbb;
+$color-light: #e8e8e8;
+$color-bright: #f7f7f7;
+
+// Font Sizes
+$fs-base: 16;
+$fs-largest: 46;
+$fs-10: 10;
+$fs-11: 11;
+$fs-12: 12;
+$fs-13: 13;
+$fs-14: 14;
+$fs-15: 15;
+$fs-16: 16;
+$fs-18: 18;
+$fs-20: 20;
+$fs-22: 22;
+$fs-26: 26;
+$fs-28: 28;
+$fs-30: 30;
+$fs-34: 34;
+$fs-36: 36;
+$fs-40: 40;
+$fs-46: 46;
+$fs-60: 60;
+
+// Font Weights
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-semibold: 600;
+$fw-bold: 700;
+$fw-extrabold: 800;
+$fw-black: 900;
+
+// Line heights
+$lh-base: 1.7;
+$lh-small: 1.6;
+$lh-headings: 1.2;
+$lh-quote: 1.25;
+$lh-meta: 30;
+$lh-meta-sty1: 28;
+$lh-meta-sty2: 20;
+$lh-pagination: 38;
+
+// Letter spacing
+$ls-small: .1em;
+$ls-single-h: -.03em;
+$ls-single-h-2: -.02em;
+
+// Font Families
+$ff-body: "PT Serif", serif;
+$ff-headings: "Playfair Display", serif;
+$ff-secondary: "Libre Franklin", sans-serif;
+$ff-coding-1: 'Courier 10 Pitch', Courier, monospace;
+$ff-coding-2: Monaco, Consolas, 'Andale Mono', 'DejaVu Sans Mono', monospace;
+
+// Border positions
+$border-positions-def: (null, top, right, bottom, left);
+
+// Border width
+$bw-1: 1px;
+$bw-2: 2px;
+$bw-3: 3px;
+
+// Margins
+$margin-big: 55;
+$margin-small: 30;
+$margin-small-2: $margin-small / 2;
+$margin-sidebar-title-top: 31;
+$margin-tiny: 2px;
+
+// Comments
+$com-pad-left: 90;
+$com-avatar: 70;
+$com-avatar-small: $com-avatar / 2;
+
+// Break points
+$bp-large: 1200;
+$bp-large2: 1025;
+$bp-medium: 1024;
+$bp-700: 700;
+$bp-900: 900;
+$bp-medium2: 641;
+$bp-small: 640;
+$bp-480: 480;
+$bp-400: 400;

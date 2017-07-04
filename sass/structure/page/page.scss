@@ -1,0 +1,116 @@
+////////////////////////
+// Page Post Template //
+////////////////////////
+
+/*! ### Page */
+.page-template-default {
+	.site-page {
+		& > * {
+			@extend %clearfix;
+			margin-bottom: rem($margin-big);
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		.page {
+			border-bottom-width: $bw-2;
+			border-bottom-style: solid;
+			padding-bottom: rem($margin-big);
+			@extend %light-border;
+		}
+
+		& > *:not(.page) {
+			@extend %ff-secondary;
+		}
+	}
+
+	.row-display.grid-2 > header {
+		margin-bottom: rem($margin-big);
+
+		.entry-title {
+			margin-bottom: 0;
+		}
+	}
+
+	.entry-thumbnail {
+		padding: 0;
+		margin: 0;
+		margin-bottom: 2rem;
+	}
+
+	.entry-content, .comment-content {
+		padding-right: rem($margin-small);
+		@extend %semidark-font;
+		@include rem_font_size($fs-18);
+
+		@include link-style( $bw-2 );
+
+		& > *:last-child {
+			margin-bottom: 0;
+		}
+
+		& > *:first-child {
+			margin-top: 0;
+			padding-top: 0;
+		}
+
+		h1, h2, h3, h4, h5, h6 {
+			@extend %ff-secondary;
+			letter-spacing: $ls-single-h;
+		}
+
+		h1 {
+			@include rem_font_size($fs-34);
+		}
+		h2 {
+			@include rem_font_size($fs-30);
+		}
+		h3 {
+			@include rem_font_size($fs-26);
+		}
+		h4 {
+			@include rem_font_size($fs-22);
+		}
+		h5 {
+			@include rem_font_size($fs-18);
+		}
+		h6 {
+			@include rem_font_size($fs-14);
+		}
+		h5, h6 {
+			text-transform: uppercase;
+			letter-spacing: $ls-small;
+		}
+		p {
+			line-height: 1.8;
+			margin-top: 0;
+			margin-bottom: 2rem;
+			position: relative;
+			// word-spacing: 0.015em;
+			// letter-spacing: 0.005em;
+		}
+		ul {
+			list-style-position: outside;
+			margin-left: 1.5em;
+		}
+		figure {
+			width: auto !important;
+		}
+		blockquote, blockquote p {
+			text-align: center;
+			line-height: $lh-quote;
+		}
+		table {
+			@include rem_font_size($fs-15);
+		}
+	}
+
+	@at-root .home.page-template-default {
+		.entry-meta, .entry-meta-secondary {
+			display: none;
+		}
+	}
+}
+@import "page-tmpl/tmpl-1.scss";

@@ -1,0 +1,64 @@
+///////////////////////
+// Section: Category //
+///////////////////////
+
+/*! ### Category Section */
+/*! -------------------- */
+$masonry-mb: 25;
+
+.section-category {
+	&.s-c-masonry-sidebar {
+		margin-bottom: rem($masonry-mb);
+
+		.col-8x, .col-4x {
+			margin-bottom: 0;
+		}
+
+		.col-8x {
+			@include mq(max900) {
+				@include mw(100%);
+			};
+		}
+
+		.col-4x {
+			@include mq(max900) {
+				@include mw(100%);
+
+				.widget {
+					float: left;
+					width: 48%;
+
+					&.wid-big-buttons, &.neville-w-das {
+						float: right;
+					}
+				}
+			};
+
+			@include mq(maxsmall) {
+				.widget {
+					float: left !important;
+					width: 60%;
+
+					&.wid-big-buttons, &.neville-w-das {
+						width: 100%;
+					}
+				}
+			};
+
+			@include mq(max480) {
+				.widget {
+					float: left !important;
+					width: 100%;
+				}
+			};
+		}
+	}
+
+	&.s-c-masonry-full {
+		margin-bottom: rem($masonry-mb);
+
+		.col-12x.list-articles {
+			margin-bottom: 0;
+		}
+	}
+}

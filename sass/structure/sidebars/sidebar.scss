@@ -1,0 +1,331 @@
+/////////////
+// Sidebar //
+/////////////
+
+// Global values
+@include mq(max900) {
+	.col-4x.sidebar-wrap, .col-4x.footer-sidebar {
+		@include mw(100%);
+
+		.sidebar {
+			width: 100%;
+			max-width: rem(400);
+			float: none;
+			margin: rem($margin-big) auto 0 auto;
+		}
+	}
+
+	.col-4x.footer-sidebar {
+		margin-bottom: rem($margin-small) !important;
+
+		&:last-child {
+			margin-bottom: 0 !important;
+		}
+
+		.sidebar {
+			margin-top: 0;
+		}
+	}
+}
+
+/*! ### Default Sidebar */
+/*! ------------------- */
+.sidebar {
+	float: left;
+	width: 100%;
+	@extend %ff-secondary;
+	@for $s-index from 1 through 6 {
+		h#{$s-index} {
+			@extend %ff-secondary;
+		}
+	}
+
+	/*! #### Sticky Sidebars */
+	.sticky-sidebar-ac {
+		@include mq(maxlarge) {
+			padding: 0 !important;
+			position: relative !important;
+			@include transform( none !important, ( 'ms', 'webkit' ) );
+			top: auto !important;
+			left: auto !important;
+			right: auto !important;
+			bottom: auto !important;
+			width: auto !important;
+		};
+	}
+
+	/*! #### Default Widget Template */
+	@at-root .widget {
+		width: 100%;
+		@extend %clearfix;
+		border-width: $bw-1;
+		border-style: solid;
+		margin-bottom: rem($margin-small);
+		@extend %light-border;
+		@extend %bright-bg;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		.section-footer-sidebars & {
+			@extend %blank-bg;
+		}
+
+		&.neville-w-das {
+			text-align: center;
+			border-width: 3px;
+			border-style: double;
+			@extend %blank-bg;
+			font-size: 0;
+
+			@include mq(max1024) {
+				border: none;
+
+				.widget-content {
+					margin: 0;
+				}
+			};
+		}
+	}
+
+	@at-root .widget-title-wrap {
+		text-align: center;
+		font-size: 0;
+		margin-top: rem(-$margin-sidebar-title-top);
+		margin-bottom: rem($margin-small);
+
+		.widget-title {
+			@extend %clearfix;
+			position: relative;
+			display: inline-block;
+			@extend %dark-bg;
+			@extend %blank-font;
+			padding: 0 rem(20);
+			margin: 0;
+			@extend %medium-normal;
+			text-transform: uppercase;
+			letter-spacing: $ls-small;
+			&, & span {
+				line-height: 1;
+			}
+			& span {
+				padding: rem(15) rem(5);
+				float: left;
+				border-bottom-width: $bw-2;
+				border-bottom-style: solid;
+				@extend %accent-border-bottom;
+			}
+			& a, & a:hover, & a:visited {
+				@extend %blank-font;
+			}
+			img {
+				display: inline-block;
+				float: left;
+				margin-right: rem(3);
+			}
+		}
+	}
+
+	@at-root .widget-content {
+		@include rem_font_size($fs-13);
+		margin: rem($margin-small);
+		@extend %excerpt-style;
+
+		/*! Widget Elements */
+		& *:last-child {
+			margin-bottom: 0;
+		}
+		& a {
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+		& ul, & ol {
+			list-style-position: inside;
+		}
+		& ul {
+			list-style: none;
+		}
+		& img:not(.rss-widget-icon) {
+			display: block;
+			max-width: 100%;
+			height: auto;
+		}
+		& ul li,
+		& ol li {
+			margin-bottom: 0.625em;
+		}
+		& li a + ul {
+			margin-top: 0.625em;
+		}
+		& li a + ul li:before {
+			content: "\2014";
+			margin-right: 0.222em;
+		}
+		& ul ul ul,
+		& ol ol ol {
+			padding-left: .5em;
+		}
+		& .wp-caption-text,
+		.widget_rss & .rss-date,
+		& .post-date {
+			@include rem_font_size($fs-11);
+		}
+		& .wp-caption-text,
+		.widget_rss & .rss-date,
+		& .widget .post-date,
+		& .widget .comment-author-link {
+			font-style: italic;
+		}
+
+		/*! Widget big buttons */
+		@at-root .wid-big-buttons {
+			.wid-big-button {
+				float: left;
+				width: 50%;
+				text-align: center;
+				border-bottom-width: 1px;
+				border-bottom-style: solid;
+				@extend %light-border-bottom;
+				border-right-width: 1px;
+				border-right-style: solid;
+				@extend %light-border-right;
+				margin-bottom: -$bw-1;
+				@include rem_font_size($fs-14);
+				font-weight: $fw-bold;
+				padding: rem(25) rem(15);
+
+				span {
+					display: inline-block;
+					position: relative;
+
+					i {
+						margin-top: -2px;
+						display: inline-block;
+					}
+
+					&:before {
+						content: "";
+						bottom: 0;
+						width: 100%;
+						position: absolute;
+						border-bottom-width: $bw-2;
+						border-bottom-style: solid;
+						@extend %accent-border-bottom;
+					}
+				}
+
+				&:nth-child(2n) {
+					border-right: none;
+				}
+			}
+		}
+
+		/*! Widgets posts list */
+		.wid-posts-lists {
+			.wid-pl-item {
+				position: relative;
+				margin-bottom: rem( $margin-small-2 );
+				@extend %clearfix;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+
+				.entry-thumbnail {
+					position: relative;
+					width: 19%;
+					float: left;
+					margin: 0;
+
+					.wid-pli-pos {
+						position: absolute;
+						top: 0;
+						right: 0;
+						z-index: 3;
+						@extend %blank-font;
+						@include rem_font_size($fs-10);
+						line-height: 1;
+						padding: rem(7);
+						font-weight: $fw-bold;
+
+						&:before {
+							content: "";
+							position: absolute;
+							width: 100%;
+							height: 100%;
+							top: 0; left: 0;
+							@extend %accent-bg;
+							opacity: .9;
+							z-index: -1;
+						}
+					}
+				}
+
+				.entry-small-info {
+					float: left;
+					width: 100%;
+
+					&.has-thumbnail {
+						float: right;
+						width: 76%;
+					}
+				}
+			}
+		}
+
+		/*! Ads Widget */
+		.neville-w-das & {
+			display: inline-block;
+			text-align: left;
+			margin: rem($margin-small) 0;
+		}
+
+		/*! Search Widget */
+		.widget_search & .search-submit {
+			width: 100%;
+		}
+
+		/*! Tag Cloud Widget */
+		.widget_tag_cloud & .tagcloud a {
+			display: inline-block;
+		}
+
+		/*! Text Widget */
+		.textwidget {
+			@include link-style( $bw-1 );
+		}
+
+		/*! Instagram Widget */
+		.wid-instagram & {
+			.instagram-footer {
+				text-align: center;
+				padding-top: rem( $margin-small );
+			}
+		}
+
+		/*! Recent Posts & Comments Widget */
+		.widget_recent_entries & li, .widget_recent_comments & li {
+			border-bottom-width: 1px;
+			border-bottom-style: solid;
+			@extend %light-border-bottom;
+			padding-bottom: .575em;
+			margin-bottom: .575em;
+
+			&:last-child {
+				border-bottom: none;
+				padding-bottom: 0;
+				margin-bottom: 0;
+			}
+		}
+		.widget_recent_entries & a, .widget_recent_comments & a {
+			font-weight: $fw-semibold;
+		}
+		.widget_recent_entries & .post-date {
+			display: block;
+			width: 100%;
+		}
+
+	}
+}

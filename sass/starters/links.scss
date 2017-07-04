@@ -1,0 +1,17 @@
+///////////
+// Links //
+///////////
+a {
+	@extend %darkest-font;
+	text-decoration: none;
+	&:focus {
+		outline: thin dotted;
+	}
+	&:hover,
+	&:active {
+		@extend %semidark-font;
+		outline: 0;
+	}
+}
+
+// Check the mixin `link-style` for more styles

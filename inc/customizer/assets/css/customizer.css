@@ -1,0 +1,93 @@
+/**
+ * Info Control
+ */
+.neville-control-info {
+	background-color: #fff;
+	border: 1px solid #e1e1e1;
+	padding: 1em;
+	border-radius: 4px;
+	box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+	position: relative;
+}
+.neville-m-t {
+	margin-top: 1.222em;
+}
+.neville-m-b {
+	margin-bottom: 1.222em;
+}
+.neville-control-info:after, .neville-control-info:before {
+	top: 100%;
+	left: 10%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+.neville-control-info.no-pointer:after, .neville-control-info.no-pointer:before {
+	display: none;
+}
+.neville-control-info:after {
+	border-color: rgba(255, 255, 255, 0);
+	border-top-color: #fff;
+	border-width: 8px;
+	margin-left: -8px;
+}
+.neville-control-info:before {
+	border-color: rgba(225, 225, 225, 0);
+	border-top-color: #e1e1e1;
+	border-width: 9px;
+	margin-left: -9px;
+}
+.neville-control-info > :last-child {
+	margin-bottom: 0;
+}
+.neville-control-info-label {
+	position: relative;
+	padding-right: 40px;
+}
+.neville-control-info-label:after {
+	font-family: dashicons;
+	line-height: 1.2;
+	vertical-align: middle;
+}
+.neville-control-info-label .dashicons {
+	position: absolute;
+	top: 0.122em;
+	right: 0;
+	opacity: 0.5;
+}
+.neville-control-info-description {
+	border-top: 1px solid #e1e1e1;
+	padding-top: 1em;
+}
+
+/**
+ * Recommend Control
+ */
+.notice-neville-installer {
+	border-bottom: 1px solid #eee;
+	overflow: hidden;
+	padding: 0 14px;
+	background-color: #f6f6f6;
+}
+
+/**
+ * Pro section
+ */
+#customize-controls .control-section-neville-pro-section .accordion-section-title:hover,
+#customize-controls .control-section-neville-pro-section .accordion-section-title:focus {
+	background-color: #fff;
+}
+
+.control-section-neville-pro-section .accordion-section-title .button {
+	margin-top:  -4px;
+	font-weight: 400;
+	margin-left: 8px;
+}
+
+.rtl .control-section-neville-pro-section .accordion-section-title .button {
+	margin-left:  0;
+	margin-right: 8px;
+}

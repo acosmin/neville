@@ -1,0 +1,31 @@
+/////////////////////
+// Section: Slider //
+/////////////////////
+
+/*! ### Slider Section */
+/*! ------------------ */
+.section-slider {
+	.sec-arrow {
+		position: absolute;
+		display: inline-block;
+		width: rem(34);
+		@include rem_font_size($fs-26);
+		@extend %blank-bg;
+		text-align: center;
+		top: 50%;
+		margin-top: rem(-50/2);
+		z-index: 2;
+
+		&.arrow-prev {
+			left: 0;
+		}
+
+		&.arrow-next {
+			right: 0;
+		}
+
+		.nicon {
+			line-height: rem(50);
+		}
+	}
+}

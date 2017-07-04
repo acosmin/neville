@@ -1,0 +1,44 @@
+/////////////////////////
+// Section: Break Line //
+/////////////////////////
+
+/*! ### Break Line Section */
+/*! ---------------------- */
+.section-breakline {
+	$breakline-height: 3px;
+	clear: both;
+	height: $breakline-height;
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	@extend %light-border-bottom;
+	@extend %light-border-top;
+	margin-bottom: rem($margin-big);
+	text-align: center;
+	font-size: 0;
+
+	&.small {
+		margin-bottom: rem($margin-small);
+	}
+
+	& > span:not(.customize-partial-edit-shortcut) {
+		position: relative;
+		width: 35px;
+		height: $breakline-height;
+		display: inline-block;
+		@extend %blank-bg;
+		margin-top: -1px;
+		& > span {
+			display: inline-block;
+			width: $breakline-height;
+			height: $breakline-height;
+			@extend %light-bg;
+			margin-right: $breakline-height;
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+}
