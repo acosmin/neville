@@ -161,3 +161,94 @@ if( ! function_exists( 'neville_headers_bg' ) ) {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'neville_headers_bg' );
+
+if( ! function_exists( 'neville_sections_scripts' ) ) {
+	/**
+	 * Add inline scripts for sections
+	 *
+	 * @since  1.0.1
+	 * @return void
+	 */
+	function neville_sections_scripts() {
+		if( is_customize_preview() || ! is_page_template( 'template-frontpage.php' ) ) return;
+
+		$sidebars = get_option( 'sidebars_widgets' );
+
+		if( false !== $sidebars && ! empty( $sidebars ) ) {
+			foreach ( $sidebars as $key => $sidebar ) {
+				if( $key === 'wp_inactive_widgets' || $key === 'array_version' ) continue;
+
+				if( ! empty( $sidebar ) ) {
+					foreach ( $sidebar as $i => $widget_id ) {
+						$widget_number = array_slice( explode( '-', $widget_id ), -1 );
+						$widget_number = $widget_number[ 0 ];
+
+						if( false !== strpos( $widget_id, 'neville-section-slider' ) ) {
+							$widget = get_option( 'widget_neville-section-slider' );
+
+							if( false !== $widget ) {
+								$instance = $widget[ $widget_number ];
+								$instance[ 'widget_id' ] = $widget_id;
+
+								wp_add_inline_script(
+									'neville-scripts',
+									neville_sections_slider_script( $instance )
+								);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+add_action( 'wp_enqueue_scripts', 'neville_sections_scripts' );
+
+if( ! function_exists( 'neville_sections_slider_script' ) ) {
+	/**
+	 * Slider script template
+	 *
+	 * @since  1.0.1
+	 * @return string
+	 */
+	function neville_sections_slider_script( $instance = [] ) {
+		$sid       = $instance[ 'widget_id' ];
+		$autoplay  = ! empty( $instance[ 'autoplay' ] ) && $instance[ 'autoplay' ] ? 'true' : 'false';
+		$timeout   = ! empty( $instance[ 'timeout' ] ) && $instance[ 'timeout' ] * 1000;
+		$dots      = ! empty( $instance[ 'show_dots' ] ) && $instance[ 'show_dots' ] ? 'true' : 'false';
+		$rewind    = ! empty( $instance[ 'rewind' ] ) && $instance[ 'rewind' ] ? 'true' : 'false';
+
+		$arrows_format = '
+				nevilleSliderSecId.find( ".arrow-next" ).on( "click", function( event ) {
+					event.preventDefault();
+					nevilleSliderId.trigger( "next.owl.carousel", [ 200 ] );
+				});
+
+				nevilleSliderSecId.find( ".arrow-prev" ).on( "click", function( event ) {
+					event.preventDefault();
+					nevilleSliderId.trigger( "prev.owl.carousel", [ 200 ] );
+				});';
+
+		$arrows = ! empty( $instance[ 'show_arrows' ] ) && $instance[ 'show_arrows' ] ? $arrows_format : '';
+
+		$format = '(function( $ ) {
+			$( document ).ready( function( $ ) {
+				var nevilleSliderId    = $( "#%1$s-js" ),
+				    nevilleSliderSecId = $( "#%1$s" );
+
+				nevilleSliderId.owlCarousel({
+					items    : 1,
+					autoplay : %2$s,
+					autoplayTimeout: %3$d,
+					dots     : %4$s,
+					rewind   : %5$s,
+				});
+				%6$s
+			});
+		})( jQuery );';
+
+		return sprintf(
+			$format, esc_attr( $sid ), esc_attr( $autoplay ), intval( $timeout ), esc_attr( $dots ), esc_attr( $rewind ), $arrows
+		);
+	}
+}
