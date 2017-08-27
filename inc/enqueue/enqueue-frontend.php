@@ -196,6 +196,20 @@ if( ! function_exists( 'neville_sections_scripts' ) ) {
 								);
 							}
 						}
+
+						if( false !== strpos( $widget_id, 'neville-section-category' ) ) {
+							$widget = get_option( 'widget_neville-section-category' );
+
+							if( false !== $widget ) {
+								$instance = $widget[ $widget_number ];
+								$instance[ 'widget_id' ] = $widget_id;
+
+								wp_add_inline_script(
+									'neville-scripts',
+									neville_sections_slider_script( $instance )
+								);
+							}
+						}
 					}
 				}
 			}
