@@ -124,36 +124,36 @@ if( ! function_exists( 'neville_cc_sortable_post_boxes' ) ) {
 	 */
 	function neville_cc_sortable_post_boxes() {
 
-		$boxes = array();
+		$boxes = [];
 
 		// About the author
-		$boxes['author'] = array(
+		$boxes['author'] = [
 			'id'       => 'author',
 			'label'    => esc_html_x( 'About the author', 'Customizer sortable options', 'neville' ),
 			'callback' => 'neville_about_the_author'
-		);
+		];
 
 		// Next & previous posts links
-		$boxes['nextprev'] = array(
+		$boxes['nextprev'] = [
 			'id'       => 'nextprev',
 			'label'    => esc_html_x( 'Next &amp; prev article', 'Customizer sortable options', 'neville' ),
 			'callback' => 'neville_post_nav'
-		);
+		];
 
 		// Related posts
-		$boxes['related'] = array(
+		$boxes['related'] = [
 			'id'       => 'related',
 			'label'    => esc_html_x( 'Related posts', 'Customizer sortable options', 'neville' ),
 			'callback' => 'neville_related_posts',
-			'args'     => array()
-		);
+			'args'     => []
+		];
 
 		// Comments
-		$boxes['comments'] = array(
+		$boxes['comments'] = [
 			'id'       => 'comments',
 			'label'    => esc_html_x( 'Comments', 'Customizer sortable options', 'neville' ),
 			'callback' => 'neville_post_comments'
-		);
+		];
 
 		return apply_filters( 'neville_cc_sortable___post_boxes', $boxes );
 	}
@@ -167,9 +167,9 @@ if( ! function_exists( 'neville_cc_sortable_defaults' ) ) {
 	 * @param  array  $items Default items
 	 * @return string
 	 */
-	function neville_cc_sortable_defaults( $items = array(), $mod ){
-		$default = array();
-		foreach( $items as $item ){
+	function neville_cc_sortable_defaults( $items = [], $mod ){
+		$default = [];
+		foreach( $items as $item ) {
 			$default[] = $item[ 'id' ] . ':1';
 		}
 		return apply_filters( 'neville_cc_sortable_defaults___' . $mod, implode( ',', $default ) );

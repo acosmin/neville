@@ -100,3 +100,37 @@ if( ! function_exists( 'neville_sanitize_css' ) ) {
 		return $format ? preg_replace('/\s\s+/', ' ', wp_strip_all_tags( $custom_css ) ) : esc_html( $custom_css );
 	}
 }
+
+if( ! function_exists( 'neville_sanitize_cc_sortable' ) ) {
+	/**
+	 * Sanitize sortable options
+	 *
+	 * @since  1.0.1
+	 * @param  string $input   Current input value
+	 * @param  object $setting The current setting object
+	 * @return string          Sanitized value
+	 */
+	function neville_sanitize_cc_sortable( $input, $setting ){
+		$output  = [];
+		$choices = $setting->manager->get_control( $setting->id )->choices;
+
+		$items = explode( ',', $input );
+
+		if( ! $items ) {
+			return null;
+		}
+
+		foreach( $items as $item ) {
+			$item = explode( ':', $item );
+
+			if( isset( $item[ 0 ] ) && isset( $item[ 1 ] ) ) {
+				if( array_key_exists( $item[ 0 ], $choices ) ) {
+					$status = $item[ 1 ] ? '1' : '0';
+					$output[] = trim( $item[ 0 ] . ':' . $status );
+				}
+			}
+		}
+
+		return trim( esc_attr( implode( ',', $output ) ) );
+	}
+}
