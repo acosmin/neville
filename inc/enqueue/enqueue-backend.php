@@ -14,7 +14,9 @@ if ( ! function_exists( 'neville_scripts_admin' ) ) {
 	 * @since  1.0.0
 	 * @return void
 	 */
-	function neville_scripts_admin() {
+	function neville_scripts_admin( $hook ) {
+		if ( 'widgets.php' !== $hook ) return;
+
 		// Styles
 		wp_enqueue_style(
 			'neville-style-admin',
