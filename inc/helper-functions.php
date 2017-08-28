@@ -493,6 +493,19 @@ if( ! function_exists( 'neville_featured_posts' ) ) {
 	}
 }
 
+if( ! function_exists( 'neville_get_widget_number' ) ) {
+	/**
+	 * Returns the current widget instance number
+	 *
+	 * @since  1.0.1
+	 * @param  string $widget_id Widget ID
+	 * @return string            Current widget instance number
+	 */
+	function neville_get_widget_number( $widget_id ) {
+		return array_slice( explode( '-', $widget_id ), -1 )[ 0 ];
+	}
+}
+
 if( ! function_exists( 'neville_sortable_items_ouput' ) ) {
 	function neville_sortable_items_ouput( $items, $new, $mod ) {
 		if( ! $new ) return;

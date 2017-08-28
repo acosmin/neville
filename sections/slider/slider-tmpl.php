@@ -93,7 +93,8 @@ if( ! function_exists( 'neville__sec_tmpl_slider_end' ) ) {
 // Slider JS script for Customizer
 if( ! function_exists( 'neville__sec_tmpl_slider_js' ) ) {
 	function neville__sec_tmpl_slider_js( $o ) {
-		if( ! is_customize_preview() && ! is_page_template( 'template-frontpage.php' ) ) return;
+		if( ! is_customize_preview() ) return;
+		if( ! is_page_template( 'template-frontpage.php' ) ) return;
 
 		$o[ 'widget_id' ] = $o[ 'widget' ]->id;
 

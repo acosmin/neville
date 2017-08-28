@@ -180,8 +180,7 @@ if( ! function_exists( 'neville_sections_scripts' ) ) {
 
 				if( ! empty( $sidebar ) ) {
 					foreach ( $sidebar as $i => $widget_id ) {
-						$widget_number = array_slice( explode( '-', $widget_id ), -1 );
-						$widget_number = $widget_number[ 0 ];
+						$widget_number = neville_get_widget_number( $widget_id );
 
 						if( false !== strpos( $widget_id, 'neville-section-slider' ) ) {
 							$widget = get_option( 'widget_neville-section-slider' );
@@ -206,7 +205,12 @@ if( ! function_exists( 'neville_sections_scripts' ) ) {
 
 								wp_add_inline_script(
 									'neville-scripts',
-									neville_sections_slider_script( $instance )
+									neville_sections_category_script( $instance )
+								);
+
+								wp_add_inline_script(
+									'neville-scripts',
+									neville_sections_category_side_script( $instance )
 								);
 							}
 						}
@@ -263,6 +267,91 @@ if( ! function_exists( 'neville_sections_slider_script' ) ) {
 
 		return sprintf(
 			$format, esc_attr( $sid ), esc_attr( $autoplay ), intval( $timeout ), esc_attr( $dots ), esc_attr( $rewind ), $arrows
+		);
+	}
+}
+
+if( ! function_exists( 'neville_sections_category_script' ) ) {
+	/**
+	 * Category script template
+	 *
+	 * @since  1.0.1
+	 * @return string
+	 */
+	function neville_sections_category_script( $instance = [] ) {
+		$number   = neville_get_widget_number( $instance[ 'widget_id' ] );
+		$selector = '.masonry-grid-' . absint( $number );
+		$vals     = apply_filters( 'neville___sec_tmpl_category_posts_js_vals', [
+			'is'   => '.masonry-item',
+			'cw'   => '.masonry-sizer',
+			'gu'   => '.masonry-gutter',
+			'pp'   => 'true',
+		], $instance );
+
+		$format = '
+		(function( $ ) {
+			$( document ).ready( function( $ ){
+				var nevilleCategorySel = $( "%1$s" );
+				nevilleCategorySel.imagesLoaded( function() {
+					nevilleCategorySel.masonry( {
+						itemSelector    : "%2$s",
+						columnWidth     : "%3$s",
+						gutterWidth     : "%4$s",
+						percentPosition : %5$s,
+					});
+				});
+			});
+		})( jQuery );';
+
+		return sprintf(
+			$format,
+			esc_attr( $selector ),
+			esc_attr( $vals[ 'is' ] ),
+			esc_attr( $vals[ 'cw' ] ),
+			esc_attr( $vals[ 'gu' ] ),
+			esc_attr( $vals[ 'pp' ] )
+		);
+	}
+}
+
+if( ! function_exists( 'neville_sections_category_side_script' ) ) {
+	/**
+	 * Category side script template
+	 *
+	 * @since  1.0.1
+	 * @return string
+	 */
+	function neville_sections_category_side_script( $instance = [] ) {
+		$number   = neville_get_widget_number( $instance[ 'widget_id' ] );
+		$selector = '.masonry-grid-' . absint( $number );
+		$sticky   = ! empty( $instance[ 'sticky' ] ) && $instance[ 'sticky' ] ? true : false;
+		$side     = ! empty( $instance[ 'side' ] ) && $instance[ 'side' ] ? true : false;
+
+		$vals = apply_filters( 'neville___sec_tmpl_cat_side_js_vals', [
+			'cs'   => $selector,
+			'amt'  => 30
+		], $instance );
+
+		$format = '
+		(function( $ ) {
+			$( document ).ready( function( $ ) {
+				var nevilleCatSel = $( "#sec-category-%1$d-sidebar" )
+				nevilleCatSel.imagesLoaded( function() {
+					nevilleCatSel.stickysidebars({
+						containerSelector   : "%2$s",
+						additionalMarginTop : %3$d
+					});
+				});
+			});
+		})( jQuery );';
+
+		$format = ( ! $sticky || ! $side ) ? '' : $format;
+
+		return sprintf(
+			$format,
+			absint( $number ),
+			esc_attr( $vals[ 'cs' ] ),
+			absint( $vals[ 'amt' ] )
 		);
 	}
 }
