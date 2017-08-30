@@ -30,6 +30,7 @@ Neville is a very clean and purposeful WordPress theme that has been designed wi
 * Added sanitization function for Customizer sortable options;
 * Fixed loading scripts in the admin area;
 * Fixed using scripts directly into sections, we're now using `wp_add_inline_script()`;
+* Removed `languages` folder & files; 
 * Minor fixes;
 
 ### 1.0.0 - July 04, 2017
