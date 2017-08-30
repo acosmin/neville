@@ -3,8 +3,8 @@
 **Contributors:** acosmin  
 **Requires at least:** WordPress 4.6
 **Tested up to:** WordPress 4.8  
-**Stable tag:** 1.0.0
-**Version:** 1.0.0
+**Stable tag:** 1.0.1
+**Version:** 1.0.1
 **License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
 **Tags:** grid-layout, two-columns, right-sidebar, translation-ready, custom-background, custom-header, custom-logo, footer-widgets, featured-images, theme-options, custom-menu, threaded-comments, blog, news, entertainment
@@ -25,6 +25,12 @@ Neville is a very clean and purposeful WordPress theme that has been designed wi
 1. The menu supports only 1 level sub-menus.
 
 ## Changelog
+
+### 1.0.1 - August 30, 2017
+* Added sanitization function for Customizer sortable options;
+* Fixed loading scripts in the admin area;
+* Fixed using scripts directly into sections, we're now using `wp_add_inline_script()`;
+* Minor fixes;
 
 ### 1.0.0 - July 04, 2017
 * Initial release;
