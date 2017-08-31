@@ -183,6 +183,10 @@
 		@include transform( translateY(-50%), ( 'ms', 'webkit' ) );
 	}
 
+	.nav-next .img-entry-content-1x {
+		text-align: right;
+	}
+
 	.nav-previous, .nav-next {
 		position: relative;
 

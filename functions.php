@@ -25,7 +25,7 @@ if( ! defined( 'NEVILLE_THEME_URL' ) ) {
 	define( 'NEVILLE_THEME_URL', 'http://www.acosmin.com/theme/neville/' );
 }
 if( ! defined( 'NEVILLE_VERSION' ) ) {
-	define( 'NEVILLE_VERSION', '1.0.0' );
+	define( 'NEVILLE_VERSION', '1.0.1' );
 }
 if( ! defined( 'NEVILLE_DIR' ) ) {
 	define( 'NEVILLE_DIR', trailingslashit( get_template_directory() ) );

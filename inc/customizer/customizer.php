@@ -538,7 +538,7 @@ if( ! function_exists( 'neville_customizer' ) ) {
 					'single_sortable',
 					array(
 						'default'           => neville_cc_sortable_defaults( neville_cc_sortable_post_boxes(), 'single_sortable' ),
-						'sanitize_callback' => 'esc_html',
+						'sanitize_callback' => 'neville_sanitize_cc_sortable',
 						'transport'         => 'refresh',
 						'capability'        => 'edit_theme_options',
 					)

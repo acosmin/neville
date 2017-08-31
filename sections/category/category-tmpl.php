@@ -338,31 +338,12 @@ if( ! function_exists( 'neville__sec_tmpl_category' ) ) {
 		// Category posts Javascript
 		if( ! function_exists( 'neville__sec_tmpl_category_posts_js' ) ) {
 			function neville__sec_tmpl_category_posts_js( $o ) {
-				$widget   = $o[ 'widget' ];
-				$selector = '.masonry-grid-' . absint( $widget->number );
-				$vals     = apply_filters( 'neville___sec_tmpl_category_posts_js_vals', [
-					'is'   => '.masonry-item',
-					'cw'   => '.masonry-sizer',
-					'gu'   => '.masonry-gutter',
-					'pp'   => 'true',
-				], $o );
-				?>
-				<script type='text/javascript'>
-				(function( $ ) {
-					$( document ).ready( function( $ ){
-						var nevilleCategorySel = $( "<?php echo esc_attr( $selector ); ?>" );
-						nevilleCategorySel.imagesLoaded( function() {
-							nevilleCategorySel.masonry( {
-								itemSelector    : '<?php echo esc_attr( $vals[ 'is' ] ); ?>',
-								columnWidth     : '<?php echo esc_attr( $vals[ 'cw' ] ); ?>',
-								gutterWidth     : '<?php echo esc_attr( $vals[ 'gu' ] ); ?>',
-								percentPosition : <?php echo esc_attr( $vals[ 'pp' ] ); ?>,
-							});
-						});
-					});
-				})( jQuery );
-				</script>
-				<?php
+				if( ! is_customize_preview() ) return;
+				if( ! is_page_template( 'template-frontpage.php' ) ) return;
+
+				$o[ 'widget_id' ] = $o[ 'widget' ]->id;
+
+				echo '<script type="text/javascript">' . neville_sections_category_script( $o ) . '</script>';
 			}
 		}
 
@@ -643,36 +624,12 @@ if( ! function_exists( 'neville__sec_tmpl_category' ) ) {
 		// Category sidebar js
 		if( ! function_exists( 'neville__sec_tmpl_cat_side_js' ) ) {
 			function neville__sec_tmpl_cat_side_js( $o ) {
-				// Do nothing if disabled
-				if( ! $o[ 'sticky' ] || ! $o[ 'side' ] ) return;
+				if( ! is_customize_preview() ) return;
+				if( ! is_page_template( 'template-frontpage.php' ) ) return;
 
-				// The widget
-				$widget = $o[ 'widget' ];
+				$o[ 'widget_id' ] = $o[ 'widget' ]->id;
 
-				// Some vars
-				$nr     = $widget->number;
-				$vals   = apply_filters( 'neville___sec_tmpl_cat_side_js_vals', [
-					'cs'  => '.masonry-grid-' . absint( $nr ),
-					'amt' => 30
-				], $o );
-
-				// Output
-				?>
-				<script type='text/javascript'>
-				(function( $ ) {
-					$( document ).ready( function( $ ) {
-						var nevilleCatSel = $( '#sec-category-<?php echo absint( $nr ); ?>-sidebar' )
-						nevilleCatSel.imagesLoaded( function() {
-							nevilleCatSel.stickysidebars({
-								// Settings
-								containerSelector   : '<?php echo esc_attr( $vals[ 'cs' ] ); ?>',
-								additionalMarginTop : <?php echo absint( $vals[ 'amt' ] ); ?>
-							});
-						});
-					});
-				})( jQuery );
-				</script>
-				<?php
+				echo '<script type="text/javascript">' . neville_sections_category_side_script( $o ) . '</script>';
 			}
 		}
 

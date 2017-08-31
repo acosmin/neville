@@ -90,46 +90,15 @@ if( ! function_exists( 'neville__sec_tmpl_slider_end' ) ) {
 	}
 }
 
-// Slider JS script
+// Slider JS script for Customizer
 if( ! function_exists( 'neville__sec_tmpl_slider_js' ) ) {
 	function neville__sec_tmpl_slider_js( $o ) {
-		$section   = $o[ 'widget' ];
-		$sid       = $section->id;
-		$autoplay  = $o[ 'autoplay' ] ? 'true' : 'false';
-		$timeout   = $o[ 'timeout' ] * 1000;
-		$dots      = $o[ 'show_dots' ] ? 'true' : 'false';
-		$arrows    = $o[ 'show_arrows' ] ? 'true' : 'false';
-		$rewind    = $o[ 'rewind' ] ? 'true' : 'false';
-		?>
-		<script type='text/javascript'>
-			(function( $ ) {
-				$( document ).ready( function( $ ) {
-					var nevilleSliderId    = $( "#<?php echo esc_attr( $sid . '-js' ); ?>" ),
-					    nevilleSliderSecId = $( "#<?php echo esc_attr( $sid ); ?>" );
+		if( ! is_customize_preview() ) return;
+		if( ! is_page_template( 'template-frontpage.php' ) ) return;
 
-					nevilleSliderId.owlCarousel({
-						items    : 1,
-						autoplay : <?php echo esc_attr( $autoplay ); ?>,
-						autoplayTimeout: <?php echo intval( $timeout ); ?>,
-						dots     : <?php echo esc_attr( $dots ); ?>,
-						rewind   : <?php echo esc_attr( $rewind ); ?>,
-					});
+		$o[ 'widget_id' ] = $o[ 'widget' ]->id;
 
-					<?php if( $arrows ) : ?>
-					nevilleSliderSecId.find( '.arrow-next' ).on( 'click', function( event ) {
-						event.preventDefault();
-						nevilleSliderId.trigger( 'next.owl.carousel', [ 200 ] );
-					});
-
-					nevilleSliderSecId.find( '.arrow-prev' ).on( 'click', function( event ) {
-						event.preventDefault();
-						nevilleSliderId.trigger( 'prev.owl.carousel', [ 200 ] );
-					});
-					<?php endif; ?>
-				});
-			})( jQuery );
-		</script>
-		<?php
+		echo '<script type="text/javascript">' . neville_sections_slider_script( $o ) . '</script>';
 	}
 }
 

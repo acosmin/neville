@@ -16,7 +16,7 @@ if ( ! function_exists( 'neville_setup' ) ) {
 		 * If you're building a theme based on Neville, use a find and replace
 		 * to change 'neville' to the name of your theme in all the template files.
 		 */
-		load_theme_textdomain( 'neville', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'neville' );
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );

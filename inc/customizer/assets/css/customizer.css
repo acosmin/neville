@@ -1,4 +1,57 @@
 /**
+ * Customizer Sections
+ */
+.neville-c-search {
+	background-color: #eeeeee !important;
+	box-shadow: inset 0 -1px 2px rgba(0,0,0,.1);
+}
+.neville-c-search > * {
+	opacity: 0;
+}
+.wp-customizer #available-widgets-list > div[class*="neville-section-"],
+.wp-customizer li[id*="customize-control-widget_neville-section-"] .move-widget {
+	display: none !important;
+}
+.wp-customizer #available-widgets-list.neville-c-display-widgets div.widget-tpl.neville-c-display-block {
+	display: block !important;
+}
+.wp-customizer #available-widgets-list.neville-c-display-widgets div.widget-tpl {
+	display: none !important;
+}
+
+/**
+ * Customizer sortable
+ */
+.neville-sortable-options-list li:not(.neville-sortable-options-hideme) {
+	box-sizing: border-box;
+	width: 100%;
+	background-color: white;
+	padding: 10px;
+	border: 1px solid #e1e1e1;
+	position: relative;
+	margin-bottom: 1px;
+}
+.neville-sortable-options-list li:not(.neville-sortable-options-hideme) i {
+	cursor: move;
+	position: absolute;
+	top: 50%;
+	right: 10px;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+/**
+ * Widgets styles
+ */
+.neville-h4 {
+	border-bottom: 1px solid #e5e5e5;
+	padding-bottom: 0.825em;
+	font-weight: 800;
+	margin-bottom: 0;
+}
+
+/**
  * Info Control
  */
 .neville-control-info {
